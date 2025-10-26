@@ -14,7 +14,7 @@ library(patchwork)
 
 ## Read wards metadata
 metadata_hai <- readxl::read_xlsx("data/hospital_data/HAI-28MAY2022-16AUG2022.xlsx")
-metadata_cases <- readxl::read_xlsx("data/hospital_data/metadata_mt.xlsx")
+metadata_cases <- readxl::read_xlsx("data/hospital_data/HK_nosocomial_metadata_2025-09-13_GS_031025.xlsx")
 metadata_cases$new_name <- sapply(metadata_cases$FASTA, function(x) {
   this_name <- strsplit(x, "/", fixed = TRUE)[[1]][1:3] %>% paste(collapse = "_")
   this_name
@@ -25,9 +25,12 @@ metadata_hai <- left_join(metadata_hai, df_Hospital_anonymized, by = c("HOSPITAL
 write_csv(metadata_hai, "data/hospital_data/metadata_hai.csv")
 
 unique_hospital_wards <- paste0(metadata_hai$Hospital_anonymized, "-", metadata_hai$`WARD/CLUSTERS`)
-unique_hospital_wards_official <- unique_hospital_wards[metadata_hai$`Officially reported nosocimial infection`]
+unique_hospital_wards_official <- unique_hospital_wards[metadata_hai$`Confirmed cluster`]
 unique_hospitals <- metadata_hai$Hospital_anonymized %>% unique()
-unique_hospitals_official <- metadata_hai$Hospital_anonymized[metadata_hai$`Officially reported nosocimial infection`] %>% unique()
+unique_hospitals_official <- metadata_hai$Hospital_anonymized[metadata_hai$`Confirmed cluster`] %>% unique()
+
+(tmp <- metadata_hai %>% filter(`Confirmed cluster`) %>% select(Hospital_anonymized, `WARD/CLUSTERS`, Lineages) %>% arrange(Lineages, Hospital_anonymized))
+length(unique(tmp$Hospital_anonymized))
 
 source("scripts/helper/ward_colors.R")
 
@@ -300,8 +303,8 @@ fig_ml_trees_hospitals <- lapply(unique_hospitals, function(this_hospital) {
       })
       tip_label_data$new_label[!tip_label_data$isTip] <- paste0("Collpased (N=", num_tips_per_node_gt_treshd, ")")
 
-      tip_label_data <- left_join(tip_label_data, metadata_cases[, c("FASTA", "case_type")], by = c("label" = "FASTA"))
-      tip_label_data$new_label[tip_label_data$isTip] <- paste0(tip_label_data$new_label[tip_label_data$isTip], tip_label_data$case_type[tip_label_data$isTip], ")")
+      tip_label_data <- left_join(tip_label_data, metadata_cases[, c("FASTA", "case_type_updated")], by = c("label" = "FASTA"))
+      tip_label_data$new_label[tip_label_data$isTip] <- paste0(tip_label_data$new_label[tip_label_data$isTip], tip_label_data$case_type_updated[tip_label_data$isTip], ")")
 
       tip_label_data$size <- ifelse(tip_label_data$isTip, 3, 2)
       tip_label_data$color <- sapply(seq_len(nrow(tip_label_data)), function(i) {
@@ -448,6 +451,17 @@ sapply(1:length(fig_ml_trees_hospitals), function(i) {
 # Figure 2b
 # Read BEAST MCC tree
 tree <- read.beast("results/trees/ba22_phylogeo_edit_mcc.tre")
+# Drop tip(s) as they are no longer classified as nosocomial infection
+tip_labels <- ape::as.phylo(tree)$tip.label
+to_drop <- grep("^22TM347527($|/)", tip_labels, value = TRUE)
+if (length(to_drop) > 0) {
+  tree <- treeio::drop.tip(tree, to_drop)
+}
+to_drop <- grep("^22MB358559($|/)", tip_labels, value = TRUE)
+if (length(to_drop) > 0) {
+  tree <- treeio::drop.tip(tree, to_drop)
+}
+
 data_collection_date <- read_tsv("results/trees/date_ba22.tsv")
 ward_colors <- c(ward_colors[unique_hospital_wards_official], "Excluded clusters" = "#808080")
 

@@ -37,7 +37,9 @@ official_palette <- c(
   "#CC5500", # Burnt Orange
   "#483D8B", # Dark Slate Blue (More Purple than Navy)
   "#008B8B", # Dark Cyan (Greener Teal)
-  "#DC143C"  # Crimson (Strong Red)
+  "#DC143C", # Crimson (Strong Red)
+  "#2F4F4F", # Dark Slate Gray
+  "#800000"  # Maroon
 )
 n_palette <- length(official_palette)
 stopifnot(n_palette >= length(unique_hospital_wards_official))

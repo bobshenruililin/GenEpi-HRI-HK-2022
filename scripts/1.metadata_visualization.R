@@ -1,3 +1,14 @@
+# Ensure required packages are installed
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+required_packages <- c(
+  "tidyverse", "jsonlite", "dplyr", "tidyr", "lubridate", "ggplot2",
+  "ggforce", "ggrepel", "MetBrewer", "ggbump", "scales", "sp",
+  "gridExtra", "RColorBrewer", "writexl", "readxl"
+)
+to_install <- setdiff(required_packages, rownames(installed.packages()))
+if (length(to_install)) install.packages(to_install)
+
+# Load libraries
 library(tidyverse)
 library(jsonlite)
 library(dplyr)
@@ -12,6 +23,8 @@ library(scales) # For the rescale function
 library(sp)
 library(gridExtra)
 library(RColorBrewer)
+library(grid)      # for unit()
+# readxl and writexl are used via :: but ensure installed above
 
 # Panel A: Aggregated confirmed case classification and sequenced samples in Hong Kong by date (2022).
 data <- fromJSON("data/case_curve/HK_case_data.json")
@@ -125,12 +138,19 @@ grid_fig_1a2 <- ggforce_hack_facet_zoom_x(fig_1a2)
 ggsave("results/fig_1a.png", grid_fig_1a2, width = 10, height = 8, dpi = 300)
 ggsave("results/fig_1a.pdf", grid_fig_1a2, width = 10, height = 8)
 
-# Panel B: Hospital-acquired infections (HAIs) by date, each ward having one horizontal line, each case represented by a dot (stratified by staff and patient).
 
+# Panel B: Hospital-acquired infections (HAIs) by date, each ward having one horizontal line, each case represented by a dot (stratified by staff and patient).
 metadata_hai <- readxl::read_xlsx("data/hospital_data/HAI-28MAY2022-16AUG2022.xlsx")
-metadata_cases <- readxl::read_xlsx("data/hospital_data/metadata_mt.xlsx")
+metadata_cases <- readxl::read_xlsx("data/hospital_data/HK_nosocomial_metadata_2025-09-13_GS_031025.xlsx")
+table(metadata_cases$case_type_updated)
+
+# metadata_cases$change_of_type <- paste0(metadata_cases$case_type_old, " -> ", metadata_cases$case_type_updated)
+# change_counts <- table(metadata_cases$change_of_type)
+# paste0(names(change_counts), ": ", as.integer(change_counts))
+# metadata_cases %>% filter(!change_of_type %in% c("patient -> Inpatient", "staff -> Staff")) %>% group_by(HOSPITAL, `WARD/CLUSTERS`, change_of_type) %>% summarise(N = n()) %>% arrange(desc(N)) %>% print(n=100)
+
 metadata_cases$Ward_ID <- metadata_cases$`WARD/CLUSTERS`
-metadata_cases$Ward_ID[!metadata_cases$Ward_ID %in% metadata_hai$`WARD/CLUSTERS`[metadata_hai$`Officially reported nosocimial infection`]] <- paste0(metadata_cases$Ward_ID[!metadata_cases$Ward_ID %in% metadata_hai$`WARD/CLUSTERS`[metadata_hai$`Officially reported nosocimial infection`]], "*") # add "*" to the ward ID of the clusters not reported as nosocomial infection
+metadata_cases$Ward_ID[!metadata_cases$Ward_ID %in% metadata_hai$`WARD/CLUSTERS`[metadata_hai$`Confirmed cluster`]] <- paste0(metadata_cases$Ward_ID[!metadata_cases$Ward_ID %in% metadata_hai$`WARD/CLUSTERS`[metadata_hai$`Confirmed cluster`]], "*") # add "*" to the ward ID of the clusters not reported as nosocomial infection
 
 metadata_cases$sample_id <- sapply(metadata_cases$FASTA, function(x) as.character(strsplit(x, "/")[[1]][1]))
 sort(table(metadata_cases$sample_id))
@@ -140,9 +160,22 @@ metadata_cases$date[metadata_cases$date_imputed] <- metadata_cases %>% filter(is
 
 metadata_cases$HOSPITAL <- factor(metadata_cases$HOSPITAL, metadata_cases %>% arrange(`1ST_COL_DATE`) %>% pull(HOSPITAL) %>% unique())
 metadata_cases$Ward_ID <- factor(metadata_cases$Ward_ID, metadata_cases %>% arrange(desc(`1ST_COL_DATE`)) %>% pull(Ward_ID) %>% unique())
-metadata_cases_plot <- metadata_cases %>% transmute(Date=ymd(date), Wards=Ward_ID, Hospital = HOSPITAL, `Case type`=case_type, `Hospital clusters` = HA_CLUSTERS, Lineages = LINEAGE)
+
+metadata_cases$standardized_datetime <- as.Date(as.numeric(metadata_cases$standardized_datetime), origin = "1899-12-30")
+metadata_cases$API <- as.numeric(ymd(metadata_cases$date)-metadata_cases$standardized_datetime) %>% ceiling()
+quantile(metadata_cases$API, na.rm=TRUE, probs=seq(0, 1, by=0.01))
+
+metadata_cases$Is_psychiatric  <- metadata_cases$HOSPITAL %in% c("CPH", "TKP")
+
+metadata_cases$case_type_new <- metadata_cases$case_type_updated
+metadata_cases$case_type_new[metadata_cases$case_type_updated == "Inpatient" & (metadata_cases$API < 3)] <- "Inpatient (API < 3)"
+metadata_cases$case_type_new[metadata_cases$case_type_updated == "Inpatient" & (metadata_cases$API >= 3)] <- "Inpatient (API >= 3)"
+metadata_cases$case_type_new[metadata_cases$case_type_updated == "Inpatient" & is.na(metadata_cases$API)] <- "Inpatient (API unknown)"
+metadata_cases$case_type_new[metadata_cases$case_type_new == "Staff" | metadata_cases$case_type_new == "Outpatient"] <- "Outpatient/Staff"
+
+metadata_cases_plot <- metadata_cases %>% transmute(Date=ymd(date), Wards=Ward_ID, Hospital = HOSPITAL, `Case type`=case_type_new, `Hospital clusters` = HA_CLUSTERS, Lineages = LINEAGE)
 metadata_cases_plot <- metadata_cases_plot %>% group_by(Date, `Hospital clusters`, Hospital, Wards, `Case type`, Lineages) %>% summarise(N = n())
-metadata_cases_plot$`Case type` <- factor(metadata_cases_plot$`Case type`, levels = c("NA", "staff", "patient"), labels = c("Unknown", "Staff", "Patient"))
+metadata_cases_plot$`Case type` <- factor(metadata_cases_plot$`Case type`, levels = c("Inpatient (API < 3)", "Inpatient (API >= 3)", "Inpatient (API unknown)", "Outpatient/Staff"))
 
 df_Hospital_anonymized <- tibble(Hospital=levels(metadata_cases_plot$Hospital), Hospital_anonymized = LETTERS[seq_along(unique(metadata_cases_plot$Hospital))])
 write_csv(df_Hospital_anonymized, "data/hospital_data/Hospital_anonymized.csv")
@@ -170,15 +203,19 @@ fig_1b <- ggplot() +
              alpha = 0.8) +
   # Plot points with overlap (apply jittering)
   geom_point(data = metadata_cases_plot_with_overlap %>% 
-               filter(!is.na(case_type_count) & `Case type` == "Staff"),
+               filter(!is.na(case_type_count) & `Case type` == "Inpatient (API < 3)"),
              aes(x = Date, y = Wards, color = Lineages, shape = `Case type`, size = N),
              alpha = 0.8, position = position_nudge(y = 0.3)) +
   geom_point(data = metadata_cases_plot_with_overlap %>% 
-               filter(!is.na(case_type_count) & `Case type` == "Patient"),
+               filter(!is.na(case_type_count) & `Case type` == "Inpatient (API >= 3)"),
              aes(x = Date, y = Wards, color = Lineages, shape = `Case type`, size = N),
-             alpha = 0.8) +
+             alpha = 0.8, position = position_nudge(y = 0.1)) +
   geom_point(data = metadata_cases_plot_with_overlap %>% 
-               filter(!is.na(case_type_count) & `Case type` == "Unknown"),
+               filter(!is.na(case_type_count) & `Case type` == "Inpatient (API unknown)"),
+             aes(x = Date, y = Wards, color = Lineages, shape = `Case type`, size = N),
+             alpha = 0.8, position = position_nudge(y = -0.1)) +
+  geom_point(data = metadata_cases_plot_with_overlap %>% 
+               filter(!is.na(case_type_count) & `Case type` == "Outpatient/Staff"),
              aes(x = Date, y = Wards, color = Lineages, shape = `Case type`, size = N),
              alpha = 0.8, position = position_nudge(y = -0.3)) +
   geom_vline(xintercept = as.Date("2022-05-31"), linetype = "dashed", 
@@ -195,7 +232,10 @@ fig_1b <- ggplot() +
   scale_color_manual(values = c("BA.2.12.1" = dark2_colors[2], 
                                "BA.2.2" = dark2_colors[3], 
                                "BA.5.6" = dark2_colors[6])) +
-  scale_shape_manual(values = c("Patient" = 16, "Staff" = 17, "Unknown" = 5)) +
+  scale_shape_manual(values = c("Outpatient/Staff" = 5, 
+                                "Inpatient (API unknown)" = 0,
+                                "Inpatient (API < 3)" = 17, 
+                                "Inpatient (API >= 3)" = 16)) +
   facet_grid(rows = vars(Hospital_anonymized), scales = "free_y", space = "free_y") +
   theme_minimal() +
   theme(
@@ -210,6 +250,65 @@ fig_1b <- ggplot() +
 combined_grid <- gridExtra::grid.arrange(grid_fig_1a2, ggplotGrob(fig_1b), ncol = 1, heights = c(1.5, 2))
 ggsave("results/fig_1ab.png", combined_grid, width = 10, height = 16, dpi = 300)
 ggsave("results/fig_1ab.pdf", combined_grid, width = 10, height = 16)
+
+## We want to plot the distribution of API (admission-to-positive interval) for the cases in figure 1b
+plot_API_all <- ggplot(metadata_cases %>% filter(!is.na(API))) +
+  geom_histogram(aes(x = API, fill = Is_psychiatric), binwidth = 50, color = "black", alpha = 0.7) +
+  scale_x_continuous(
+    breaks = seq(0, 8000, by = 1000),
+    labels = scales::comma
+  ) +
+  scale_y_continuous(
+    breaks = scales::pretty_breaks(),
+    labels = scales::label_number(accuracy = 1)
+  ) +
+  labs(
+    x = "Admission-to-positive interval (days)",
+    y = "No. of inpatient cases"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.background = element_blank(),
+    panel.grid.major = element_line(color = "grey", size = 0.5),
+    panel.grid.minor = element_line(color = "lightgrey", size = 0.25),
+    legend.background = element_rect(fill = "white", color = NA),
+    legend.key.size = unit(1, "lines"),
+    legend.title = element_text(size = 9),
+    legend.text = element_text(size = 8),
+    legend.position = "top"
+  )
+plot_API_all
+
+plot_API_0_100 <- ggplot(metadata_cases %>% filter(!is.na(API) & API <= 100)) +
+  geom_histogram(aes(x = API, fill = Is_psychiatric), binwidth = 1, color = "black", alpha = 0.7) +
+  scale_x_continuous(
+    breaks = seq(0, 100, by = 10),
+    labels = scales::comma
+  ) +
+  scale_y_continuous(
+    breaks = scales::pretty_breaks(),
+    labels = scales::label_number(accuracy = 1)
+  ) +
+  labs(
+    x = "Admission-to-positive interval (days)",
+    y = "No. of inpatient cases"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.background = element_blank(),
+    panel.grid.major = element_line(color = "grey", size = 0.5),
+    panel.grid.minor = element_line(color = "lightgrey", size = 0.25),
+    legend.background = element_rect(fill = "white", color = NA),
+    legend.key.size = unit(1, "lines"),
+    legend.title = element_text(size = 9),
+    legend.text = element_text(size = 8),
+    legend.position = "top"
+  )
+plot_API_0_100
+
+ggsave("results/fig_S_API_all.pdf", plot_API_all, width = 7, height = 5)
+ggsave("results/fig_S_API_0_100.pdf", plot_API_0_100, width = 6, height = 5)
+
 
 ## link fig_1b to a map
 hkmap = readRDS("data/hospital_data/HKG_adm1.rds") 
@@ -229,7 +328,7 @@ hkmap = readRDS("data/hospital_data/HKG_adm1.rds")
 df_pos <- read_csv("data/hospital_data/hong_kong_hospitals_with_districts.csv")
 # df_pos <- left_join(df_pos, df_Hospital_anonymized, "Hospital")
 # df_plot_1b_left_link <- left_join(df_plot_1b_left_link, df_pos, "Hospital")
-# df_plot_1b_left_link <- df_plot_1b_left_link %>% filter(Hospital %in% metadata_hai$HOSPITAL[metadata_hai$`Officially reported nosocimial infection`])
+# df_plot_1b_left_link <- df_plot_1b_left_link %>% filter(Hospital %in% metadata_hai$HOSPITAL[metadata_hai$`Confirmed cluster`])
 
 hkmapdf = fortify(hkmap)
 hkmapmeta <- read_csv("data/hospital_data/Hong_Kong_Districts_with_HA_Clusters.csv")
@@ -243,7 +342,7 @@ p_fig_1b_right <- ggplot(hkmapdf) +
   # geom_sigmoid(data = df_plot_1b_left_link, 
   #   aes(x = `Longitude (E)`, y = `Latitude (N)`, xend = bump_x_start, yend = bump_y_start, group=Hospital), 
   #   alpha = 0.8, smooth = 12, size = 0.8, direction = "x") +
-  geom_label_repel(data = df_pos %>% filter(Hospital %in% metadata_hai$HOSPITAL[metadata_hai$`Officially reported nosocimial infection`]), 
+  geom_label_repel(data = df_pos, 
                    aes(x = `Longitude (E)`, y = `Latitude (N)`, label = `Full Name`), 
                    size = 3.5, 
                    alpha = 0.8,
@@ -397,13 +496,14 @@ HA_reported_data_nosocomial_infection %>% group_by(sequenced) %>% summarise(n = 
 HA_reported_data_nosocomial_infection %>% group_by(sequenced) %>% summarise(Total_cases = sum(Total_cases, na.rm=TRUE)) %>% ungroup() %>% mutate(Prop_cases = Total_cases/sum(Total_cases, na.rm=TRUE)) # the number and prop of nosocomial infections clusters we have sequenced
 
 HAI_own_data <- readxl::read_xlsx("data/hospital_data/HAI-28MAY2022-16AUG2022.xlsx")
-names(HAI_own_data)
-HAI_own_data %>% group_by(`Officially reported nosocimial infection`) %>% summarise(n = n(), Total_cases=sum(`TOTAL_CASES#`)) # the number of confirmed nosocomial infections clusters we have sequenced
-table(HAI_own_data$`Reason for not identified as nosocomial infection`)
+HAI_own_data %>% group_by(`Confirmed cluster`) %>% summarise(n = n(), Total_cases=sum(`TOTAL_CASES#`)) # the number of confirmed nosocomial infections clusters we have sequenced
+HAI_own_data %>% filter(`Confirmed cluster`) %>% group_by(HOSPITAL) %>% summarise(n = n(), Total_cases=sum(`TOTAL_CASES#`)) # the number of confirmed nosocomial infections clusters we have sequenced
+table(HAI_own_data$`Reason for not identified as nosocomial infection / Bootstrap support for confirmed clusters`)
 
-metadata_hai %>% filter(`Officially reported nosocimial infection`) %>% .$HA_CLUSTERS %>% table() # the number of confirmed nosocomial infections clusters we have sequenced
+metadata_hai %>% filter(`Confirmed cluster`) %>% .$HA_CLUSTERS %>% table() # the number of confirmed nosocomial infections clusters we have sequenced
 
 table(metadata_cases$LINEAGE)
 table(metadata_cases$LINEAGE)/nrow(metadata_cases)*100 # the proportion of BA.2.2 in our data
 
 metadata_cases %>% group_by(HOSPITAL, Ward_ID, LINEAGE) %>% summarise(n = n()) %>% ungroup() %>% group_by(HOSPITAL, Ward_ID) %>% summarise(n = n(), Lineages = paste(unique(LINEAGE), collapse = ",")) %>% arrange(desc(n), desc(Lineages)) # the number of lineages in each ward
+
