@@ -117,8 +117,9 @@ Leave-one-out / BA.5.6-ward / tie-window checks & --- & New robustness \\
 \subsection{Data}
 Anonymised plot table from Gu et al.\ ($n=162$ sequenced persons; hospitals A--Q; HA cluster; ward; case type; lineage; date)~\cite{gu2026hai}.
 Wards without a trailing asterisk match the parent-confirmed nosocomial set (18 wards, 126 genomes); starred wards (11 units, 36 genomes) were investigated but not confirmed as nosocomial genomic clusters and are reserved for sensitivity analyses.
-HA beds (31~Mar~2022) and FY2021--22 discharges and patient-days come from HA Statistical Report extracts~\cite{ha2022stat}.
-Catchment demography uses 2017 planning projections with core district land areas~\cite{legco2017,census2021}; these are coarse administrative measures, not closed cohorts.
+HA beds, inpatient discharges, and patient-days were taken from HA open data (data.gov.hk / HA JSON), with FY2021--22 and FY2022--23 compared for sensitivity; FY2022--23 is closer to the study window~\cite{ha2022stat}.
+Catchment demography uses 2017 planning projections and 2021 census district populations with alternative land-area definitions~\cite{legco2017,census2021}; these are coarse administrative measures, not closed cohorts.
+Where distinctive ward/tip identifiers allowed an internal join to open hospital rows, we also computed anonymized hospital-letter inpatient rates (names not published).
 Official HA nosocomial press bulletins supply a presence footprint (hospitals/clusters mentioned), not cumulative case totals (Table~S3 was not recoverable here).
 
 \subsection{First-detection order}
@@ -139,9 +140,10 @@ We report four distinct quantities:
   \item Genomic representation by HA cluster (present vs not represented).
 \end{enumerate}
 We do \emph{not} call total persons per patient-days an HAI incidence rate.
-Annual FY2021--22 throughput is an imperfect proxy for an 83-day window; we emphasise relative NT/urban ratios among represented clusters.
+Annual throughput remains an imperfect proxy for an 83-day window; we emphasise relative NT/urban ratios among represented clusters and report FY2021--22 versus FY2022--23 open-data sensitivity.
 Pooled ratios (sum of numerators / sum of denominators) and means of cluster-level rates are both reported.
 Leave-one-hospital-out, leave-one-ward-out, and exclusion of the single BA.5.6 ward assess point influence.
+Density sensitivity compares population year (2017 planning vs 2021 census) and land definitions (core districts vs Islands split across HKEC/KWC).
 
 \subsection{Ascertainment audit}
 Because hospital-level official totals and sequencing-submission denominators are unavailable, we contrast \textbf{presence}: HA clusters appearing in official nosocomial bulletins versus those appearing in the sequenced confirmed-ward table, anchored by the published 51.9\% overall coverage statistic~\cite{gu2026hai}.
@@ -208,9 +210,13 @@ Inpatient only & 6 & 16 & 2 & 5 \\
 
 \subsection{Sample concentration after inpatient-throughput scaling}
 NTWC+NTEC accounted for 103/126 (81.7\%) sequenced persons in confirmed wards and 68/87 (78.2\%) sequenced confirmed-ward inpatients (Table~\ref{tab:denom}).
-Among represented clusters, pooled NT/urban ratios of sequenced inpatients were $\sim$4.0$\times$ per 1{,}000 beds, $\sim$4.9$\times$ per 100{,}000 discharges, and $\sim$4.1$\times$ per 100{,}000 patient-days; means of cluster rates were similar (Figure~\ref{fig:rates}).
+Among represented clusters, pooled NT/urban ratios of sequenced inpatients were $\sim$4.0$\times$ per 1{,}000 beds, $\sim$4.9$\times$ per 100{,}000 discharges, and $\sim$4.1$\times$ per 100{,}000 patient-days under FY2021--22 open denominators; means of cluster rates were similar (Figure~\ref{fig:rates}).
+Repeating the same numerators with FY2022--23 open beds/discharges/patient-days left the pooled ratios essentially unchanged ($\sim$4.0$\times$, $\sim$4.9$\times$, $\sim$4.2$\times$; Figure~\ref{fig:fy}).
 Leave-one-hospital-out pooled bed ratios ranged $\sim$2.6--5.5 (median $\sim$3.9); leave-one-ward-out ranged $\sim$2.8--5.5 (median $\sim$3.9).
 Excluding the BA.5.6 ward reduced the pooled bed ratio to $\sim$2.8, indicating point influence from a single deep outbreak without erasing NT concentration.
+
+Among 13 hospitals contributing confirmed-ward genomes, 12 could be joined to open hospital-level denominators without publishing names.
+Pooled NT/urban inpatient-per-bed ratios in that joined letter-level subset remained elevated ($\sim$2.6$\times$; Figure~\ref{fig:letter}), lower than the cluster-level ratio because hospital bed totals and the joinable subset differ from cluster aggregates, but still inconsistent with equal sample concentration.
 
 Staff/outpatient sequenced persons (39/126) are reported in Table~\ref{tab:denom} but are \emph{not} divided by patient-days.
 KEC appears as a descriptive comparator: relatively low hospital geographic density with low sampled inpatient counts---not a formal negative control.
@@ -245,16 +251,42 @@ Unrepresented clusters are omitted (not coded as zero).}
 \label{fig:rates}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/fig_fy_throughput_sensitivity.pdf}
+\caption{Pooled NT/urban ratios of sequenced confirmed-ward inpatients using FY2021--22 versus FY2022--23 HA open denominators.}
+\label{fig:fy}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/fig_hospital_letter_inpatient_rates.pdf}
+\caption{Anonymized hospital-letter inpatient sample rates (FY2022--23 open beds).
+Hospital names are omitted; one confirmed hospital lacked a joinable open-data row.}
+\label{fig:letter}
+\end{figure}
+
 \subsection{Discordance with coarse density measures}
 Mean catchment population density and hospitals per 100~km$^2$ were lower for NT than for urban represented clusters, while sampled inpatient rates were higher (Figure~\ref{fig:density}).
 We describe this as discordance between \emph{sampled case concentration} and coarse catchment-density measures---not as a proven density paradox of nosocomial incidence.
 Catchments are administrative; specialty hospitals may draw beyond district borders; staff exposure relates to where staff live and travel; and land-area definitions (including Islands/Lantau handling) can inflate urban density~\cite{legco2017,census2021}.
+
+Alternative definitions---2021 census populations, district land areas, and splitting Islands land/population across HKEC and KWC---still left mean NT density below mean urban density among represented clusters (NT/urban density ratios $\sim$0.27--0.62; Figure~\ref{fig:denssens}).
+The qualitative discordance is therefore not an artefact of the single baseline land/population choice.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.72\textwidth]{figures/fig_density_discordance.pdf}
 \caption{Discordance between sampled confirmed-ward inpatient concentration and coarse catchment population density (represented clusters only).}
 \label{fig:density}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{figures/fig_density_definition_sensitivity.pdf}
+\caption{Density definition sensitivity: mean NT/urban population-density ratios under alternative population years and land treatments.
+Values $<1$ mean NT remains less dense than urban represented clusters.}
+\label{fig:denssens}
 \end{figure}
 
 \subsection{Geographic genomic representation is incomplete}
@@ -307,17 +339,10 @@ Sampled cases were concentrated in New Territories clusters after crude patient-
 Complete hospital-level outbreak, throughput, staffing, and sequencing denominators are required to test whether long-stay or psychiatric case mix---or selection alone---explains the observed concentration.
 
 \section{Further work (with current data limits)}
-With only this repository and public HA/Census sources, the highest-value next steps are documentation and denominator hygiene---not a selection-adjusted incidence model.
+Public-data polish implemented here: FY2022--23 open throughput sensitivity, anonymized hospital-letter inpatient scaling, and density land/population definition checks.
+These strengthen denominator hygiene; they do \emph{not} deliver selection-adjusted incidence.
 
-\paragraph{Feasible without new restricted data.}
-\begin{itemize}[leftmargin=1.4em,itemsep=0.15em]
-  \item Update cluster throughput to HA Statistical Report / data.gov.hk extracts for FY2022--23 (closer to the study window than FY2021--22).
-  \item Where open hospital-level beds/discharges/patient-days exist, repeat inpatient scaling at hospital letter level \emph{without} publishing a name crosswalk.
-  \item Expand density sensitivity using alternative land definitions (total vs core districts) while keeping the claim as sample discordance, not incidence paradox.
-  \item Keep psychiatric/long-stay share as a candidate explanation with leave-one-out already reported; avoid causal language.
-\end{itemize}
-
-\paragraph{Not recoverable from GitHub/Kaggle.}
+\paragraph{Still not recoverable from GitHub/Kaggle.}
 Official cumulative nosocomial counts by hospital (Table~S3), specimens submitted versus sequenced, staff FTE-days, visitor volumes, and ward-level occupancy are not in public ML repositories.
 Community GISAID sets and other HK genomic repos do not supply HA outbreak registries or sampling fractions for this window.
 
@@ -329,8 +354,8 @@ That path enables inverse-probability or quantitative bias analysis; it is not a
 Treat the present manuscript as a focused secondary research note on \emph{ascertainment-aware geographic reanalysis of a published genomic sample}, with mixed first-detection patterns as a descriptive companion result.
 
 \section*{Data and code}
-Analysis scripts: \texttt{scripts/6.stage1\_peer\_review\_revision.py} (primary Stage-1 outputs), with earlier exploratory scripts retained for provenance.
-Tabulated outputs: \texttt{analysis/outputs/stage1\_*}.
+Analysis scripts: \texttt{scripts/6.stage1\_peer\_review\_revision.py} (Stage-1 reframing) and \texttt{scripts/7.optional\_polish\_public\_data.py} (FY2022--23 / hospital-letter / density sensitivity).
+Tabulated outputs: \texttt{analysis/outputs/stage1\_*} and \texttt{analysis/outputs/polish\_*}.
 Parent genomic methods: Gu et al.~\cite{gu2026hai}.
 
 \section*{Competing interests}
@@ -423,9 +448,9 @@ Findings in Danish long-term care facilities in the first year of the SARS-CoV-2
 \doi{10.1007/s41999-023-00793-y}
 
 \bibitem{ha2022stat}
-Hospital Authority (2022).
-\textit{HA Statistical Report 2021--2022} (cluster extracts; service capacity as at 31~March~2022; inpatient discharges and patient-days).
-Available from: \url{https://www3.ha.org.hk/data/HAStatistics/StatisticalReport/2021-2022}
+Hospital Authority (2022--2023).
+\textit{HA Statistical Report} / open data: inpatient discharges and deaths, patient days, and hospital beds by cluster and hospital (JSON on data.gov.hk / ha.org.hk opendata).
+Used FY2021--22 and FY2022--23 extracts; see \texttt{analysis/reference/SOURCES.md}.
 
 \bibitem{census2021}
 Census and Statistics Department, HKSAR (2022).

@@ -26,3 +26,6 @@ manuscript/*.log
 manuscript/*.out
 manuscript/*.toc
 manuscript/*.synctex.gz
+
+# HA open-data JSON cache (derived CSVs are committed)
+analysis/reference/ha_opendata_cache/
