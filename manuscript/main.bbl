@@ -1,0 +1,81 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Benoit et~al.(2023)Benoit, Tr{\'e}panier, Carignan,
+  et~al.]{benoit2023ash}
+Philippe Benoit, Patrick Tr{\'e}panier, Alex Carignan, et~al.
+\newblock On-demand, hospital-based severe acute respiratory coronavirus virus
+  2 ({SARS-CoV-2}) genomic epidemiology to support nosocomial outbreak
+  investigations: a prospective molecular epidemiology study.
+\newblock \emph{Antimicrobial Stewardship \& Healthcare Epidemiology},
+  3\penalty0 (1):\penalty0 e45, 2023.
+\newblock \doi{10.1017/ash.2023.119}.
+
+\bibitem[Cook et~al.(2023)Cook, Beckett, Glaysher, et~al.]{cook2023frontiers}
+Kate~F. Cook, Angela~H. Beckett, Sharon Glaysher, et~al.
+\newblock Multiple pathways of {SARS-CoV-2} nosocomial transmission uncovered
+  by integrated genomic and epidemiological analyses during the second wave of
+  the {COVID-19} pandemic in the {UK}.
+\newblock \emph{Frontiers in Cellular and Infection Microbiology}, 12:\penalty0
+  1066390, 2023.
+\newblock \doi{10.3389/fcimb.2022.1066390}.
+
+\bibitem[Ellingford et~al.(2021)Ellingford, George, McDermott,
+  et~al.]{ellingford2021elife}
+Jamie~M. Ellingford, Ryan George, John~H. McDermott, et~al.
+\newblock Genomic and healthcare dynamics of nosocomial {SARS-CoV-2}
+  transmission.
+\newblock \emph{eLife}, 10:\penalty0 e65453, 2021.
+\newblock \doi{10.7554/eLife.65453}.
+
+\bibitem[{Government of the HKSAR}(2017)]{legco2017}
+{Government of the HKSAR}.
+\newblock Legco question 13: Resource allocation of hospital authority.
+\newblock
+  \url{https://www.info.gov.hk/gia/general/201712/13/P2017121300666.htm}, 2017.
+
+\bibitem[Gu et~al.(2026)Gu, Li, Wang, et~al.]{gu2026hai}
+Haogao Gu, Mengting Li, Ruixuan Wang, et~al.
+\newblock Genomic epidemiology of hospital-associated {SARS-CoV-2} clusters in
+  hong kong during a period of relaxed visitation (may--august 2022).
+\newblock \emph{Influenza and Other Respiratory Viruses}, 20\penalty0
+  (3):\penalty0 e70249, 2026.
+\newblock \doi{10.1111/irv.70249}.
+
+\bibitem[{Hospital Authority}(2023)]{ha_opendata}
+{Hospital Authority}.
+\newblock Inpatient and day inpatient services throughput and hospital beds
+  open data.
+\newblock data.gov.hk / ha.org.hk opendata JSON, 2023.
+\newblock FY2021--22 and FY2022--23 extracts; downloaded 2026-07-11.
+
+\bibitem[Lindsey et~al.(2022)Lindsey, Villabona-Arenas, Campbell,
+  et~al.]{lindsey2022natcomms}
+Benjamin~B. Lindsey, Christian~J. Villabona-Arenas, Finlay Campbell, et~al.
+\newblock Characterising within-hospital {SARS-CoV-2} transmission events using
+  epidemiological and viral genomic data across two pandemic waves.
+\newblock \emph{Nature Communications}, 13:\penalty0 671, 2022.
+\newblock \doi{10.1038/s41467-022-28291-y}.
+
+\bibitem[Oltean et~al.(2023)Oltean, Allen, Frisbie, et~al.]{oltean2023eid}
+Hanna~N. Oltean, Krisandra~J. Allen, Lauren Frisbie, et~al.
+\newblock Sentinel surveillance system implementation and evaluation for
+  {SARS-CoV-2} genomic data, {Washington}, {USA}, 2020--2021.
+\newblock \emph{Emerging Infectious Diseases}, 29\penalty0 (2):\penalty0
+  242--251, 2023.
+\newblock \doi{10.3201/eid2902.221482}.
+
+\bibitem[Stirrup et~al.(2022)Stirrup, Blackstone, Mapp,
+  et~al.]{stirrup2022hoci}
+Oliver Stirrup, James Blackstone, Fiona Mapp, et~al.
+\newblock Effectiveness of rapid {SARS-CoV-2} genome sequencing in supporting
+  infection control for hospital-onset {COVID-19} infection: multicentre,
+  prospective study.
+\newblock \emph{eLife}, 11:\penalty0 e76735, 2022.
+\newblock \doi{10.7554/eLife.76735}.
+
+\end{thebibliography}

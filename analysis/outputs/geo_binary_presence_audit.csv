@@ -1,0 +1,8 @@
+ha_cluster,region,in_official_bulletins,in_genomic_sample,sequenced_inpatient,sequenced_all,observed_genomes,underlying_burden
+HKEC,non-New Territories,True,True,6,6,6,unknown (sample present)
+HKWC,non-New Territories,True,False,0,0,0,unknown (not identifiable from this sample)
+KCC,non-New Territories,True,False,0,0,0,unknown (not identifiable from this sample)
+KEC,non-New Territories,True,True,5,5,5,unknown (sample present)
+KWC,non-New Territories,True,True,8,12,12,unknown (sample present)
+NTEC,New Territories,True,True,24,39,39,unknown (sample present)
+NTWC,New Territories,True,True,44,64,64,unknown (sample present)
