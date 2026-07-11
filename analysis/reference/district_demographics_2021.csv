@@ -1,0 +1,19 @@
+district,area_km2,population_2021,density_per_km2,region,ha_cluster_primary,source_notes
+Central and Western,12.55,235953,18808,Hong Kong Island,HKWC,2021 Population Census Summary Results; Lands Dept geographic data via Wikipedia district table
+Wan Chai,10.64,166695,15791,Hong Kong Island,HKEC,2021 Population Census Summary Results
+Eastern,18.13,529603,29440,Hong Kong Island,HKEC,2021 Population Census Summary Results
+Southern,39.40,263278,6779,Hong Kong Island,HKWC,2021 Population Census Summary Results
+Yau Tsim Mong,6.99,310647,44458,Kowloon,KCC,2021 Population Census Summary Results
+Sham Shui Po,9.36,431090,47067,Kowloon,KWC,2021 Population Census Summary Results
+Kowloon City,10.02,410634,40994,Kowloon,KCC,2021 Population Census Summary Results
+Wong Tai Sin,9.30,406802,43730,Kowloon,KCC,2021 Population Census Summary Results
+Kwun Tong,11.28,673166,59704,Kowloon,KEC,2021 Population Census Summary Results
+Kwai Tsing,23.34,495798,21246,New Territories,KWC,2021 Population Census Summary Results
+Tsuen Wan,62.62,320094,5168,New Territories,KWC,2021 Population Census Summary Results
+Tuen Mun,87.54,506879,5908,New Territories,NTWC,2021 Population Census Summary Results
+Yuen Long,138.56,668080,4825,New Territories,NTWC,2021 Population Census Summary Results
+North,136.51,309631,2269,New Territories,NTEC,2021 Population Census Summary Results
+Tai Po,148.19,316470,2325,New Territories,NTEC,2021 Population Census Summary Results
+Sha Tin,69.27,692806,10082,New Territories,NTEC,2021 Population Census Summary Results
+Sai Kung,136.34,489037,3771,New Territories,KEC,2021 Population Census Summary Results
+Islands,182.74,185282,1021,New Territories,mixed_HKEC_KWC,Islands split across HKEC (e.g. St John) and KWC (Lantau/NLTH); treat carefully in cluster land-area sums

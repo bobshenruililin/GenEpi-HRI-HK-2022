@@ -30,9 +30,20 @@ The `scripts/` directory contains R scripts for data processing and visualizatio
    - Reads Markov jump data and predictor datasets.  
    - Builds and diagnoses a GAM (Negative Binomial) model, performs VIF checks, and creates time-series plots of residual autocorrelation.  
 
+4. **4.dual_seeding_geography.py**  
+   - Exploratory analysis of dual seeding (staff/outpatient-first vs inpatient-first) and geographic concentration.  
+   - Quantifies a New Territories density paradox using census land area/population and HA bed capacity denominators.  
+   - Writes tables, figures, and a research note under `analysis/outputs/`.  
+
+5. **5.denominators_ascertainment.py**  
+   - Tests whether NT concentration survives admissions/patient-day standardization.  
+   - Documents sequencing-effort circularity and compares official HA nosocomial bulletin footprints to sequenced burden.  
+   - Writes `analysis/outputs/FINDINGS_LOG.md` (manuscript-oriented claim catalog).  
+
 
 ### 3. **Results**
-The `results/` directory contains output figures and processed data
+The `results/` directory contains output figures and processed data.  
+The `analysis/` directory holds curated external reference tables (with sources) and exploratory outputs for the dual-seeding / geography / denominators thread.
 
 ## How to Run
 1. **Install Required Libraries**:
@@ -43,6 +54,7 @@ The `results/` directory contains output figures and processed data
    - Execute `1.metadata_visualization.R` to generate Figures 1a, 1b, 1c, and 1d.
    - Execute `2.tree_visualization.R` to generate phylogenetic tree visualizations.
    - Execute `3.GAM.R` to generate GAM results.
+   - Execute `python scripts/4.dual_seeding_geography.py` for dual-seeding / geographic concentration exploration.
    - Execute `GISAID_data_processing/QC.R` to process and filter GISAID genomic data. (Details refer to [here](scripts/GISAID_data_processing/README.md))
 
 3. **View Results**:
