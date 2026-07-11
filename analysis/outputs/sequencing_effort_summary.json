@@ -1,0 +1,35 @@
+{
+  "window": [
+    "2022-05-28",
+    "2022-08-18"
+  ],
+  "hospital_coded_tips": 148,
+  "community_tips": 764,
+  "tips_by_cluster": {
+    "HKEC": 6,
+    "KEC": 5,
+    "KWC": 17,
+    "NTEC": 48,
+    "NTWC": 70
+  },
+  "tips_by_hospital_code": {
+    "TMH": 30,
+    "CPH": 29,
+    "NDH": 17,
+    "AHNH": 15,
+    "SH": 10,
+    "TKP": 9,
+    "CMC": 6,
+    "PMH": 6,
+    "TKOH": 5,
+    "KCH": 5,
+    "PWH": 3,
+    "TPH": 3,
+    "TSH": 2,
+    "PYNEH": 2,
+    "TWE": 2,
+    "RH": 2,
+    "CHP": 1,
+    "CTC": 1
+  }
+}

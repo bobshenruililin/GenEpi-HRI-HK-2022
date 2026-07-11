@@ -21,6 +21,21 @@
 - Psychiatric bed fields filled where the all-cluster bed table reports them clearly
   (notably NTWC mentally-ill + mentally-handicapped).
 
+## ha_cluster_throughput_2021_22.csv
+- Inpatient discharges and patient-days by HA cluster from HA Statistical Report
+  2021-2022 cluster extracts (DownloadCluster IDs 36–42 on
+  https://www3.ha.org.hk/data/HAStatistics/), scraped 2026-07-11.
+- Mentally-ill patient-day component included where extractable.
+
+## ha_nosocomial_mention_days.csv
+- Directional ascertainment proxy: number of distinct calendar days a hospital
+  appears in the “clusters of nosocomial infection” table (or clear narrative
+  ward-cluster text) of Hospital Authority press releases on info.gov.hk
+  between 2022-05-28 and 2022-08-18.
+- Incomplete by construction (HTML variation; not all bulletins use the same
+  table). Use as directional evidence only (FINDINGS_LOG F5.4–F5.5).
+- Raw table rows: `ha_nosocomial_press_table_rows.json`.
+
 ## Important limits
 - Sequenced hospital-associated cases ≠ complete nosocomial incidence.
 - Cluster catchment ≠ closed population (cross-cluster care is common).
@@ -28,3 +43,7 @@
   that is a real geographic feature — interpret hospital-per-km² carefully.
 - KEC is a useful negative control: low hospital density like NT, but low sequenced
   HAI burden in this table.
+- Hospital-coded phylogenetic tips are largely the study’s own cluster sequences;
+  they are not an independent sequencing-effort denominator.
+- Annual FY2021-22 throughput is only an approximation for the 83-day study window.
+

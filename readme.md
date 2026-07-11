@@ -35,10 +35,15 @@ The `scripts/` directory contains R scripts for data processing and visualizatio
    - Quantifies a New Territories density paradox using census land area/population and HA bed capacity denominators.  
    - Writes tables, figures, and a research note under `analysis/outputs/`.  
 
+5. **5.denominators_ascertainment.py**  
+   - Tests whether NT concentration survives admissions/patient-day standardization.  
+   - Documents sequencing-effort circularity and compares official HA nosocomial bulletin footprints to sequenced burden.  
+   - Writes `analysis/outputs/FINDINGS_LOG.md` (manuscript-oriented claim catalog).  
+
 
 ### 3. **Results**
 The `results/` directory contains output figures and processed data.  
-The `analysis/` directory holds curated external reference tables (with sources) and exploratory outputs for the dual-seeding / geography thread.
+The `analysis/` directory holds curated external reference tables (with sources) and exploratory outputs for the dual-seeding / geography / denominators thread.
 
 ## How to Run
 1. **Install Required Libraries**:

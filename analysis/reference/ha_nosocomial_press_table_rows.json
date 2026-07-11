@@ -1,0 +1,272 @@
+[
+  {
+    "date": "2022-06-28",
+    "url": "https://www.info.gov.hk/gia/general/202206/28/P2022062800490.htm",
+    "hospital": "United Christian Hospital",
+    "cluster": "KEC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-03",
+    "url": "https://www.info.gov.hk/gia/general/202207/03/P2022070300662.htm",
+    "hospital": "Castle Peak Hospital",
+    "cluster": "NTWC",
+    "patients": 0,
+    "staff": 1,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-04",
+    "url": "https://www.info.gov.hk/gia/general/202207/04/P2022070400652.htm",
+    "hospital": "Castle Peak Hospital",
+    "cluster": "NTWC",
+    "patients": 3,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-05",
+    "url": "https://www.info.gov.hk/gia/general/202207/05/P2022070500661.htm",
+    "hospital": "Castle Peak Hospital",
+    "cluster": "NTWC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-08",
+    "url": "https://www.info.gov.hk/gia/general/202207/08/P2022070800510.htm",
+    "hospital": "Kowloon Hospital",
+    "cluster": "KCC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-10",
+    "url": "https://www.info.gov.hk/gia/general/202207/10/P2022071000608.htm",
+    "hospital": "Kwai Chung Hospital",
+    "cluster": "KWC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-11",
+    "url": "https://www.info.gov.hk/gia/general/202207/11/P2022071100623.htm",
+    "hospital": "Queen Elizabeth Hospital",
+    "cluster": "KCC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-11",
+    "url": "https://www.info.gov.hk/gia/general/202207/11/P2022071100623.htm",
+    "hospital": "Alice Ho Miu Ling Nethersole Hospital",
+    "cluster": "NTEC",
+    "patients": 0,
+    "staff": 1,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-11",
+    "url": "https://www.info.gov.hk/gia/general/202207/11/P2022071100623.htm",
+    "hospital": "Castle Peak Hospital",
+    "cluster": "NTWC",
+    "patients": 0,
+    "staff": 1,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-19",
+    "url": "https://www.info.gov.hk/gia/general/202207/19/P2022071900405.htm",
+    "hospital": "North District Hospital",
+    "cluster": "NTEC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-20",
+    "url": "https://www.info.gov.hk/gia/general/202207/20/P2022072000562.htm",
+    "hospital": "North District Hospital",
+    "cluster": "NTEC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-23",
+    "url": "https://www.info.gov.hk/gia/general/202207/23/P2022072300632.htm",
+    "hospital": "Kowloon Hospital",
+    "cluster": "KCC",
+    "patients": 2,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-24",
+    "url": "https://www.info.gov.hk/gia/general/202207/24/P2022072400704.htm",
+    "hospital": "Kowloon Hospital",
+    "cluster": "KCC",
+    "patients": 0,
+    "staff": 1,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-24",
+    "url": "https://www.info.gov.hk/gia/general/202207/24/P2022072400704.htm",
+    "hospital": "Kwai Chung Hospital",
+    "cluster": "KWC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-25",
+    "url": "https://www.info.gov.hk/gia/general/202207/25/P2022072500607.htm",
+    "hospital": "Kowloon Hospital",
+    "cluster": "KCC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-25",
+    "url": "https://www.info.gov.hk/gia/general/202207/25/P2022072500607.htm",
+    "hospital": "Tuen Mun Hospital",
+    "cluster": "NTWC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-26",
+    "url": "https://www.info.gov.hk/gia/general/202207/26/P2022072600620.htm",
+    "hospital": "Kowloon Hospital",
+    "cluster": "KCC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-26",
+    "url": "https://www.info.gov.hk/gia/general/202207/26/P2022072600620.htm",
+    "hospital": "Shatin Hospital",
+    "cluster": "NTEC",
+    "patients": 0,
+    "staff": 1,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-27",
+    "url": "https://www.info.gov.hk/gia/general/202207/27/P2022072700476.htm",
+    "hospital": "Shatin Hospital",
+    "cluster": "NTEC",
+    "patients": 0,
+    "staff": 1,
+    "source": "table"
+  },
+  {
+    "date": "2022-07-29",
+    "url": "https://www.info.gov.hk/gia/general/202207/29/P2022072900529.htm",
+    "hospital": "Kwai Chung Hospital",
+    "cluster": "KWC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-08-08",
+    "url": "https://www.info.gov.hk/gia/general/202208/08/P2022080800644.htm",
+    "hospital": "Kwai Chung Hospital",
+    "cluster": "KWC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-08-10",
+    "url": "https://www.info.gov.hk/gia/general/202208/10/P2022081000593.htm",
+    "hospital": "Castle Peak Hospital",
+    "cluster": "NTWC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-08-11",
+    "url": "https://www.info.gov.hk/gia/general/202208/11/P2022081100606.htm",
+    "hospital": "Kwai Chung Hospital",
+    "cluster": "KWC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-08-11",
+    "url": "https://www.info.gov.hk/gia/general/202208/11/P2022081100606.htm",
+    "hospital": "Castle Peak Hospital",
+    "cluster": "NTWC",
+    "patients": 2,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-08-13",
+    "url": "https://www.info.gov.hk/gia/general/202208/13/P2022081300643.htm",
+    "hospital": "Kwai Chung Hospital",
+    "cluster": "KWC",
+    "patients": 2,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-08-13",
+    "url": "https://www.info.gov.hk/gia/general/202208/13/P2022081300643.htm",
+    "hospital": "Castle Peak Hospital",
+    "cluster": "NTWC",
+    "patients": 2,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-08-14",
+    "url": "https://www.info.gov.hk/gia/general/202208/14/P2022081400542.htm",
+    "hospital": "Castle Peak Hospital",
+    "cluster": "NTWC",
+    "patients": 3,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-08-16",
+    "url": "https://www.info.gov.hk/gia/general/202208/16/P2022081600562.htm",
+    "hospital": "Castle Peak Hospital",
+    "cluster": "NTWC",
+    "patients": 1,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-08-17",
+    "url": "https://www.info.gov.hk/gia/general/202208/17/P2022081700493.htm",
+    "hospital": "Pamela Youde Nethersole Eastern Hospital",
+    "cluster": "HKEC",
+    "patients": 2,
+    "staff": 0,
+    "source": "table"
+  },
+  {
+    "date": "2022-08-18",
+    "url": "https://www.info.gov.hk/gia/general/202208/18/P2022081800370.htm",
+    "hospital": "Pamela Youde Nethersole Eastern Hospital",
+    "cluster": "HKEC",
+    "patients": 1,
+    "staff": 1,
+    "source": "table"
+  }
+]

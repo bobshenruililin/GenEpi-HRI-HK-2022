@@ -1,30 +1,30 @@
-Hospital_anonymized,Wards,Hospital clusters,region,path,cases,lineages,starred,n_case_types,duration_days,prop_api_ge3
-A,AE*,NTWC,New Territories,staff_first,7,BA.2.2,True,2,9,0.0
-A,D4,NTWC,New Territories,same_day,9,"BA.2.12.1,BA.2.2",False,2,0,1.0
-A,E1,NTWC,New Territories,inpatient_only,3,"BA.2.12.1,BA.2.2",False,2,4,0.6666666666666666
-A,H1,NTWC,New Territories,staff_first,14,BA.2.2,False,2,4,1.0
-A,R11B*,NTWC,New Territories,staff_only,2,BA.2.2,True,1,1,0.0
-B,B101*,NTWC,New Territories,inpatient_only,3,BA.2.2,True,1,2,0.0
-C,12C*,NTEC,New Territories,staff_only,3,BA.2.2,True,1,0,0.0
-C,3F,NTEC,New Territories,inpatient_first,7,BA.2.2,False,3,3,0.8
-D,E8,HKEC,Urban (HK Island/Kowloon),inpatient_only,2,BA.2.2,False,2,2,0.5
-D,J6,HKEC,Urban (HK Island/Kowloon),inpatient_only,2,BA.2.2,False,2,2,0.5
-E,11A,KWC,Urban (HK Island/Kowloon),staff_first,6,BA.2.2,False,3,9,0.6666666666666666
-F,3B,KEC,Urban (HK Island/Kowloon),inpatient_only,5,BA.2.2,False,1,7,0.0
-G,CATERING*,NTEC,New Territories,staff_only,4,BA.2.2,True,1,6,0.0
-G,E1,NTEC,New Territories,inpatient_only,2,BA.2.2,False,1,0,1.0
-G,E5,NTEC,New Territories,inpatient_first,10,BA.2.2,False,3,6,0.7142857142857143
-H,E1&E2&E3,NTWC,New Territories,staff_first,9,"BA.2.12.1,BA.2.2",False,2,6,1.0
-I,A102,NTWC,New Territories,inpatient_first,22,BA.5.6,False,2,11,1.0
-I,E002,NTWC,New Territories,same_day,7,BA.2.2,False,2,0,1.0
-J,3H,NTEC,New Territories,same_day,8,BA.2.2,False,2,0,1.0
-J,AE01*,NTEC,New Territories,staff_only,2,BA.2.2,True,1,1,0.0
-J,STAFF*,NTEC,New Territories,staff_only,4,BA.2.2,True,1,5,0.0
-K,A2R,HKEC,Urban (HK Island/Kowloon),inpatient_only,2,BA.2.2,False,1,0,1.0
-L,2A*,NTWC,New Territories,inpatient_first,2,BA.2.2,True,2,8,0.0
-M,2DL,NTEC,New Territories,inpatient_first,3,BA.2.2,False,3,2,0.5
-N,9D,NTEC,New Territories,staff_first,9,BA.2.2,False,3,3,0.3333333333333333
-N,NEATS*,NTEC,New Territories,inpatient_first,4,"BA.2.12.1,BA.2.2",True,3,6,0.3333333333333333
-O,L2*,KWC,Urban (HK Island/Kowloon),staff_first,3,BA.2.2,True,2,18,0.0
-P,C7*,HKEC,Urban (HK Island/Kowloon),inpatient_only,2,BA.2.2,True,2,3,0.5
-Q,PMH,KWC,Urban (HK Island/Kowloon),inpatient_first,6,BA.2.2,False,2,4,1.0
+Hospital_anonymized,Wards,ha_cluster,region,path,cases,lineages
+A,AE*,NTWC,New Territories,staff_first,7,BA.2.2
+A,D4,NTWC,New Territories,same_day,9,"BA.2.12.1,BA.2.2"
+A,E1,NTWC,New Territories,inpatient_only,3,"BA.2.12.1,BA.2.2"
+A,H1,NTWC,New Territories,staff_first,14,BA.2.2
+A,R11B*,NTWC,New Territories,staff_only,2,BA.2.2
+B,B101*,NTWC,New Territories,inpatient_only,3,BA.2.2
+C,12C*,NTEC,New Territories,staff_only,3,BA.2.2
+C,3F,NTEC,New Territories,inpatient_first,7,BA.2.2
+D,E8,HKEC,Urban (in sample),inpatient_only,2,BA.2.2
+D,J6,HKEC,Urban (in sample),inpatient_only,2,BA.2.2
+E,11A,KWC,Urban (in sample),staff_first,6,BA.2.2
+F,3B,KEC,Urban (in sample),inpatient_only,5,BA.2.2
+G,CATERING*,NTEC,New Territories,staff_only,4,BA.2.2
+G,E1,NTEC,New Territories,inpatient_only,2,BA.2.2
+G,E5,NTEC,New Territories,inpatient_first,10,BA.2.2
+H,E1&E2&E3,NTWC,New Territories,staff_first,9,"BA.2.12.1,BA.2.2"
+I,A102,NTWC,New Territories,inpatient_first,22,BA.5.6
+I,E002,NTWC,New Territories,same_day,7,BA.2.2
+J,3H,NTEC,New Territories,same_day,8,BA.2.2
+J,AE01*,NTEC,New Territories,staff_only,2,BA.2.2
+J,STAFF*,NTEC,New Territories,staff_only,4,BA.2.2
+K,A2R,HKEC,Urban (in sample),inpatient_only,2,BA.2.2
+L,2A*,NTWC,New Territories,inpatient_first,2,BA.2.2
+M,2DL,NTEC,New Territories,inpatient_first,3,BA.2.2
+N,9D,NTEC,New Territories,staff_first,9,BA.2.2
+N,NEATS*,NTEC,New Territories,inpatient_first,4,"BA.2.12.1,BA.2.2"
+O,L2*,KWC,Urban (in sample),staff_first,3,BA.2.2
+P,C7*,HKEC,Urban (in sample),inpatient_only,2,BA.2.2
+Q,PMH,KWC,Urban (in sample),inpatient_first,6,BA.2.2
