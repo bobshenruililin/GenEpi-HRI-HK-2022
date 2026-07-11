@@ -1,0 +1,8 @@
+ha_cluster,hospitals_mentioned,mention_days,sequenced_hai,in_official_bulletins,in_sequenced_table
+HKEC,2,4,8,True,True
+HKWC,1,1,0,True,False
+KCC,3,10,0,True,False
+KEC,1,1,5,True,True
+KWC,2,9,15,True,True
+NTEC,4,9,56,True,True
+NTWC,2,12,78,True,True

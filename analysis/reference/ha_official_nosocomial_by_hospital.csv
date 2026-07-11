@@ -1,0 +1,11 @@
+hospital,ha_cluster,official_max_patients,official_max_staff,official_max_total,mention_days,n_snapshots,example_url
+Pamela Youde Nethersole Eastern Hospital,HKEC,2,1,2,2,2,https://www.info.gov.hk/gia/general/202208/17/P2022081700493.htm
+Kowloon Hospital,KCC,2,1,2,5,5,https://www.info.gov.hk/gia/general/202207/23/P2022072300632.htm
+Queen Elizabeth Hospital,KCC,1,0,1,1,1,https://www.info.gov.hk/gia/general/202207/11/P2022071100623.htm
+United Christian Hospital,KEC,1,0,1,1,1,https://www.info.gov.hk/gia/general/202206/28/P2022062800490.htm
+Kwai Chung Hospital,KWC,2,0,2,6,6,https://www.info.gov.hk/gia/general/202208/13/P2022081300643.htm
+Alice Ho Miu Ling Nethersole Hospital,NTEC,0,1,1,1,1,https://www.info.gov.hk/gia/general/202207/11/P2022071100623.htm
+North District Hospital,NTEC,1,0,1,2,2,https://www.info.gov.hk/gia/general/202207/19/P2022071900405.htm
+Shatin Hospital,NTEC,0,1,1,2,2,https://www.info.gov.hk/gia/general/202207/26/P2022072600620.htm
+Castle Peak Hospital,NTWC,3,1,3,9,9,https://www.info.gov.hk/gia/general/202207/04/P2022070400652.htm
+Tuen Mun Hospital,NTWC,1,0,1,1,1,https://www.info.gov.hk/gia/general/202207/25/P2022072500607.htm

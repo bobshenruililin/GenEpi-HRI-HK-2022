@@ -1,0 +1,10 @@
+{
+  "method": "max(patients+staff) per hospital across nosocomial-table snapshots in HA press releases; sum within HA cluster",
+  "parent_confirmed_genomes": 126,
+  "parent_pct_of_official": 0.519,
+  "implied_official_total_from_parent": 243,
+  "reconstructed_sum_of_hospital_maxima": 15,
+  "reconstruction_note": "Sum of hospital maxima undercounts sequential distinct clusters at the same hospital and may miss narrative-only clusters; treat as lower-bound footprint, not exact Table S3.",
+  "n_press_candidates": 317,
+  "n_snapshots": 30
+}

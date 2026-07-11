@@ -20,3 +20,9 @@ results/ruixuan/*
 results/nextstrain/*
 results/*.pdf
 results/*.afdesign
+
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.toc
+manuscript/*.synctex.gz

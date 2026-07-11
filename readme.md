@@ -55,10 +55,15 @@ The `analysis/` directory holds curated external reference tables (with sources)
    - Execute `2.tree_visualization.R` to generate phylogenetic tree visualizations.
    - Execute `3.GAM.R` to generate GAM results.
    - Execute `python scripts/4.dual_seeding_geography.py` for dual-seeding / geographic concentration exploration.
+   - Execute `python scripts/5.denominators_ascertainment.py` for admissions/sequencing denominator checks and the manuscript findings log.
    - Execute `GISAID_data_processing/QC.R` to process and filter GISAID genomic data. (Details refer to [here](scripts/GISAID_data_processing/README.md))
 
 3. **View Results**:
    - Figures are saved in the `results/` directory.
+
+### 4. **Manuscript draft**
+- `manuscript/main.tex` / `manuscript/main.pdf`: companion research note (first draft).
+- `analysis/outputs/FINDINGS_LOG.md`: claim catalog with evidence grades.
 
 ## Citation
 Pending
