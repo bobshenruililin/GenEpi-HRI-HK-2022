@@ -32,9 +32,10 @@
 \title{\textbf{Dual Seeding under a Geographic Paradox:\\
 Hospital-Associated SARS-CoV-2 in Hong Kong after Visit-Schedule Relaxation}}
 \author{
-Companion research note to Shen et al.\ (2026)\\[0.4em]
-\textit{Exploratory genomic-epidemiologic reanalysis}\\[0.6em]
-\small Working first draft --- Laidlaw-caliber research essay / companion article
+Shen Ruililin\\[0.35em]
+\small Laidlaw Scholars Programme, The University of Hong Kong\\[0.6em]
+\small Companion research note to Shen et al.\ (2026)\\
+\small\textit{Exploratory genomic-epidemiologic reanalysis --- first draft}
 }
 \date{11 July 2026}
 
@@ -74,6 +75,18 @@ SARS-CoV-2; nosocomial transmission; dual seeding; geographic concentration; New
 Hong Kong's fifth COVID-19 wave forced a transition from near-elimination to managed endemicity.
 In May 2022, authorities phased in relaxed hospital visitation while community incidence rebuilt into Phase~2 of the fifth wave~\cite{shen2026hai}.
 Understanding how SARS-CoV-2 entered and spread within hospitals during that transition matters for future respiratory-pathogen preparedness: visitation has clear benefits for patients~\cite{shen2026hai}, yet wards remain vulnerable when community prevalence is high.
+Hong Kong hospitals faced intense Omicron pressure even with high healthcare-worker vaccination coverage~\cite{wong2022hcw}, and multi-bedded cubicle design facilitated onward spread despite enhanced infection-prevention measures~\cite{wee2022cubicles}.
+
+International genomic epidemiology has repeatedly shown that hospital SARS-CoV-2 dynamics are multi-route rather than single-pathway.
+Combined epidemiological--genomic reconstructions across two UK pandemic waves found shifting contributions of staff--patient transmission and strong location hotspots~\cite{lindsey2022natcomms}.
+Contact-aware analyses demonstrate that healthcare-worker (HCW) location data reveal cryptic links missed by patient-only tracing~\cite{ellingford2021elife}, while on-demand hospital genomics documents multiple coexisting transmission modes and can refute epidemiologically suspected nosocomial links~\cite{benoit2023ash}.
+At the same time, many epidemiologically labelled ``outbreaks'' comprise multiple genomic introductions rather than a single chain~\cite{haanappel2023aric}.
+These findings motivate an explicit dual-seeding taxonomy---staff/outpatient bridges versus inpatient introductions---rather than assuming a single dominant entry route.
+
+Case-mix further structures risk.
+Closed psychiatric and long-term mental-health settings have recorded extreme attack rates and IPC challenges poorly served by acute-ward protocols~\cite{chun2020frontiers,rovers2020aric,kim2023medicina}.
+Geographic patterning of facility outbreaks is real but not reducible to urban density alone: some analyses find higher outbreak odds outside the densest metropolitan cores after adjustment~\cite{doggui2025scirep}, whereas other systems show capital-region concentration~\cite{espenhain2023eurgeriatr}.
+Against that backdrop, a New Territories excess of sequenced hospital-associated infections in Hong Kong is scientifically interesting precisely because NT catchments are \emph{less} dense.
 
 Shen et al.\ sequenced 162 genomes linked to 29 suspected ward clusters across 17 public hospitals (28~May--18~August~2022), confirmed 18 nosocomial clusters (126 genomes), showed predominantly intraward transmission without resolved interward spread, and inferred more community$\to$hospital than hospital$\to$community Markov jumps~\cite{shen2026hai}.
 After adjusting for time trends, generalised additive models found no significant association between introduction rates and standard mobility indices~\cite{shen2026hai}.
@@ -233,19 +246,23 @@ Daily bulletin tables are incremental and cannot replace Table~S3 cumulative cou
 \subsection{What the dual-seeding result changes}
 If wards were seeded almost only by visitors, policy could focus narrowly on visitation rules.
 Our temporal taxonomy shows staff/outpatient-first and inpatient-first routes both carry large case burdens, and the mix is shared across NT and urban clusters.
-That aligns with the parent paper's caution that healthcare workers with routine community exposure are plausible bridges~\cite{shen2026hai}, while also preserving a role for incubating admissions despite mandatory admission screening.
-Phylogenetic staff-index events were rarer (2/18 confirmed clusters)~\cite{shen2026hai}; temporal first detection is more sensitive and should be reported as a complementary definition.
+That result sits comfortably with international evidence that HCW--patient networks and multi-route transmission are the rule rather than the exception~\cite{lindsey2022natcomms,ellingford2021elife,benoit2023ash}, and with the parent paper's caution that healthcare workers with routine community exposure are plausible bridges~\cite{shen2026hai}.
+It also preserves a role for incubating admissions despite mandatory admission screening.
+Phylogenetic staff-index events were rarer (2/18 confirmed clusters)~\cite{shen2026hai}; temporal first detection is more sensitive and should be reported as a complementary definition---especially because genomic studies often show that single epidemiological ``outbreaks'' hide multiple introductions~\cite{haanappel2023aric,benoit2023ash}.
 
 \subsection{Why the density paradox matters}
 The NT excess is the opposite of a density-driven urban story.
 Lower population and hospital geographic density, yet higher standardised sequenced burden, redirects attention to hospital case-mix (long-stay and psychiatric capacity), IPC implementation, and sampling---not skyline density.
+Literature on facility outbreaks already warns that geography matters in inconsistent directions: capital-region concentration in some systems~\cite{espenhain2023eurgeriatr}, elevated odds outside the densest core in others~\cite{doggui2025scirep}.
 KEC's low density with low burden prevents the lazy inference that ``sparse geography causes outbreaks.''
+Instead, NTWC's high mentally-ill patient-day share and the BA.5.6 single-ward deep outbreak echo the well-documented vulnerability of psychiatric and long-stay settings~\cite{chun2020frontiers,rovers2020aric,kim2023medicina}.
 
 \subsection{Denominators versus ascertainment}
 Admissions and patient-day standardisation were the cleanest quantitative tests available without hospital-level window admissions.
 They fail to wash out NT concentration.
 Sequencing-effort tip counts from the study trees are largely circular with the sample itself and were not used as independent proof.
 The bulletin presence contrast shows under-representation of some urban clusters (notably KCC) in the sequenced table: NT excess is unlikely to be \emph{only} artefact, but it is also not fully separable from ascertainment without Table~S3 hospital totals.
+This limitation is itself a finding about surveillance design: genomic programmes that follow the loudest clusters can reify geographic narratives unless coverage is audited against independent official registries~\cite{shen2026hai,benoit2023ash}.
 
 \subsection{Limitations}
 \begin{enumerate}[leftmargin=1.4em,itemsep=0.15em]
@@ -258,7 +275,7 @@ The bulletin presence contrast shows under-representation of some urban clusters
 
 \subsection{Implications}
 During high community prevalence, protecting hospitals requires more than citywide mobility management (already null in the parent GAM)~\cite{shen2026hai}.
-Practical levers include: (i)~dual attention to staff/community bridges \emph{and} admission pathways; (ii)~heightened IPC in long-stay/psychiatric settings; (iii)~genomic surveillance designed for even cluster coverage, not only the loudest outbreaks.
+Practical levers include: (i)~dual attention to staff/community bridges \emph{and} admission pathways~\cite{lindsey2022natcomms,ellingford2021elife}; (ii)~heightened, psychiatry-adapted IPC in long-stay settings~\cite{rovers2020aric,kim2023medicina}; (iii)~genomic surveillance designed for even cluster coverage, not only the loudest outbreaks.
 
 \section{Conclusion}
 Hospital-associated SARS-CoV-2 in Hong Kong's post-relaxation window was \textbf{dually seeded} and \textbf{geographically structured}.
@@ -276,16 +293,83 @@ Parent genomic methods and primary figures are described in Shen et al.~\cite{sh
 None declared for this companion reanalysis draft.
 
 \section*{Acknowledgements}
+Prepared under the Laidlaw Scholars Programme, The University of Hong Kong.
 This draft builds on the open methods and anonymised plot outputs of the parent genomic epidemiology study~\cite{shen2026hai}.
 HA Statistical Report extracts and Census/LegCo catchment figures are public.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 
 \bibitem{shen2026hai}
-Shen R., et al.\ (2026).
-Genomic epidemiology of hospital-associated SARS-CoV-2 clusters in Hong Kong during a period of relaxed visitation (May--August 2022).
+Shen R., Wu J.T., Gu H., et al.\ (2026).
+Genomic epidemiology of hospital-related severe acute respiratory syndrome coronavirus~2 infection outbreaks in Hong Kong during the fifth wave of the coronavirus disease 2019 pandemic.
 \textit{Influenza and Other Respiratory Viruses}, 20, e70249.
 \doi{10.1111/irv.70249}
+
+\bibitem{lindsey2022natcomms}
+Lindsey B.B., Villabona-Arenas C.J., Campbell F., et al.\ (2022).
+Characterising within-hospital SARS-CoV-2 transmission events using epidemiological and viral genomic data across two pandemic waves.
+\textit{Nature Communications}, 13, 671.
+\doi{10.1038/s41467-022-28291-y}
+
+\bibitem{ellingford2021elife}
+Ellingford J.M., George R., McDermott J.H., et al.\ (2021).
+Genomic and healthcare dynamics of nosocomial SARS-CoV-2 transmission.
+\textit{eLife}, 10, e65453.
+\doi{10.7554/eLife.65453}
+
+\bibitem{benoit2023ash}
+Benoit P., et al.\ (including Longtin Y.) (2023).
+On-demand, hospital-based SARS-CoV-2 genomic epidemiology to support nosocomial outbreak investigations: a prospective molecular epidemiology study.
+\textit{Antimicrobial Stewardship \& Healthcare Epidemiology}, 3, e45.
+\doi{10.1017/ash.2023.119}
+
+\bibitem{haanappel2023aric}
+Haanappel C.P., Oude Munnink B.B., Sikkema R.S., et al.\ (2023).
+Combining epidemiological data and whole genome sequencing to understand SARS-CoV-2 transmission dynamics in a large tertiary care hospital during the first COVID-19 wave in The Netherlands focusing on healthcare workers.
+\textit{Antimicrobial Resistance \& Infection Control}, 12, 46.
+\doi{10.1186/s13756-023-01247-7}
+
+\bibitem{wong2022hcw}
+Wong S.C., Chan V.W., Yuen L.L., et al.\ (2023).
+Infection of healthcare workers despite a high vaccination rate during the fifth wave of COVID-19 due to Omicron variant in Hong Kong.
+\textit{Infection Prevention in Practice}, 5, 100261.
+\doi{10.1016/j.infpip.2022.100261}
+
+\bibitem{wee2022cubicles}
+Wee L.E., Conceicao E.P., Aung M.K., et al.\ (2023).
+Nosocomial SARS-CoV-2 transmission in multi-bedded hospital cubicles over successive pandemic waves: lower mortality but wider spread with Omicron despite enhanced infection-prevention measures.
+\textit{Infection, Disease \& Health}, 28, 81--87.
+\doi{10.1016/j.idh.2022.09.003}
+
+\bibitem{chun2020frontiers}
+Chun J.Y., Jun J.Y., Choi J., et al.\ (2021).
+Coronavirus disease 2019 outbreak in a psychiatric closed ward: what we have to learn.
+\textit{Frontiers in Psychiatry}, 11, 579235.
+\doi{10.3389/fpsyt.2020.579235}
+
+\bibitem{rovers2020aric}
+Rovers J.J.E., van de Linde L.S., Kenters N., et al.\ (2020).
+Why psychiatry is different --- challenges and difficulties in managing a nosocomial outbreak of coronavirus disease (COVID-19) in hospital care.
+\textit{Antimicrobial Resistance \& Infection Control}, 9, 190.
+\doi{10.1186/s13756-020-00853-z}
+
+\bibitem{kim2023medicina}
+Kim J., Choi G., Oh J., et al.\ (2023).
+Comparative study on two COVID-19 outbreaks at a long-term mental health facility in Korea in 2020 and 2022.
+\textit{Medicina}, 59, 1170.
+\doi{10.3390/medicina59061170}
+
+\bibitem{doggui2025scirep}
+Doggui R., Ouakki M., Boulais A., et al.\ (2026).
+SARS-CoV-2 outbreaks in long-term care facilities during the Omicron era in Qu\'{e}bec, Canada.
+\textit{Scientific Reports}, 16, 3122.
+\doi{10.1038/s41598-025-32967-y}
+
+\bibitem{espenhain2023eurgeriatr}
+Espenhain L., Funk T., Kun{\o}e A., et al.\ (2023).
+Findings in Danish long-term care facilities in the first year of the SARS-CoV-2 pandemic.
+\textit{European Geriatric Medicine}, 14, 527--535.
+\doi{10.1007/s41999-023-00793-y}
 
 \bibitem{ha2022stat}
 Hospital Authority (2022).
