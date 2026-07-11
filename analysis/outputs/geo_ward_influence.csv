@@ -1,0 +1,19 @@
+Hospital_anonymized,Wards,ha_cluster,region,sequenced_all,sequenced_inpatient
+I,A102,NTWC,New Territories,22,21
+A,H1,NTWC,New Territories,14,10
+G,E5,NTEC,New Territories,10,7
+Q,PMH,KWC,non-New Territories,6,5
+J,3H,NTEC,New Territories,8,5
+F,3B,KEC,non-New Territories,5,5
+C,3F,NTEC,New Territories,7,5
+A,D4,NTWC,New Territories,9,4
+I,E002,NTWC,New Territories,7,4
+A,E1,NTWC,New Territories,3,3
+N,9D,NTEC,New Territories,9,3
+E,11A,KWC,non-New Territories,6,3
+D,E8,HKEC,non-New Territories,2,2
+D,J6,HKEC,non-New Territories,2,2
+G,E1,NTEC,New Territories,2,2
+H,E1&E2&E3,NTWC,New Territories,9,2
+M,2DL,NTEC,New Territories,3,2
+K,A2R,HKEC,non-New Territories,2,2

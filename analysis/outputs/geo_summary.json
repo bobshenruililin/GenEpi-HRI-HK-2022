@@ -1,0 +1,139 @@
+{
+  "cohort": {
+    "confirmed_genomes": 126,
+    "confirmed_inpatients": 87,
+    "confirmed_non_inpatients": 39,
+    "nt_share_inpatients": 0.7816091954022989
+  },
+  "ratios": [
+    {
+      "scope": "all_system",
+      "denominator": "patient_days_fy2022_23",
+      "sci_nt": 2.5510510330256064,
+      "sci_other": 0.3578105235088105,
+      "ratio_nt_other": 7.129614322153359,
+      "label": "patient_days"
+    },
+    {
+      "scope": "all_system",
+      "denominator": "beds_total",
+      "sci_nt": 6.86452654956592,
+      "sci_other": 0.9376696441790455,
+      "ratio_nt_other": 7.320836919676538,
+      "label": "beds"
+    },
+    {
+      "scope": "all_system",
+      "denominator": "ip_discharges_fy2022_23",
+      "sci_nt": 22.928432942763212,
+      "sci_other": 2.7222034374265722,
+      "ratio_nt_other": 8.42274777392778,
+      "label": "discharges"
+    },
+    {
+      "scope": "represented",
+      "denominator": "patient_days_fy2022_23",
+      "sci_nt": 2.5510510330256064,
+      "sci_other": 0.6082627695164311,
+      "ratio_nt_other": 4.193995031216018,
+      "label": "patient_days"
+    },
+    {
+      "scope": "represented",
+      "denominator": "beds_total",
+      "sci_nt": 6.86452654956592,
+      "sci_other": 1.6991593632623858,
+      "ratio_nt_other": 4.039954519855059,
+      "label": "beds"
+    },
+    {
+      "scope": "represented",
+      "denominator": "ip_discharges_fy2022_23",
+      "sci_nt": 22.928432942763212,
+      "sci_other": 4.704425874342309,
+      "ratio_nt_other": 4.87380044987289,
+      "label": "discharges"
+    }
+  ],
+  "key_ratios": {
+    "represented_patient_days": 4.193995031216018,
+    "represented_beds": 4.039954519855059,
+    "all_system_patient_days": 7.129614322153359,
+    "all_system_beds": 7.320836919676538,
+    "excl_largest_ward_patient_days": 2.8987906833404837,
+    "excl_largest_ward_beds": 2.7923215063704085
+  },
+  "selection_threshold": {
+    "R_obs_patient_days_represented": 4.193995031216018,
+    "inclusion_ratio_needed_for_equal_true_rates": 4.193995031216018,
+    "grid": [
+      {
+        "inclusion_prob_ratio_nt_over_other": 1.0,
+        "implied_true_rate_ratio_if_Robs": 4.193995031216018
+      },
+      {
+        "inclusion_prob_ratio_nt_over_other": 1.5,
+        "implied_true_rate_ratio_if_Robs": 2.7959966874773454
+      },
+      {
+        "inclusion_prob_ratio_nt_over_other": 2.0,
+        "implied_true_rate_ratio_if_Robs": 2.096997515608009
+      },
+      {
+        "inclusion_prob_ratio_nt_over_other": 2.5,
+        "implied_true_rate_ratio_if_Robs": 1.6775980124864074
+      },
+      {
+        "inclusion_prob_ratio_nt_over_other": 3.0,
+        "implied_true_rate_ratio_if_Robs": 1.3979983437386727
+      },
+      {
+        "inclusion_prob_ratio_nt_over_other": 3.5,
+        "implied_true_rate_ratio_if_Robs": 1.198284294633148
+      },
+      {
+        "inclusion_prob_ratio_nt_over_other": 4.0,
+        "implied_true_rate_ratio_if_Robs": 1.0484987578040046
+      },
+      {
+        "inclusion_prob_ratio_nt_over_other": 4.2,
+        "implied_true_rate_ratio_if_Robs": 0.9985702455276234
+      },
+      {
+        "inclusion_prob_ratio_nt_over_other": 5.0,
+        "implied_true_rate_ratio_if_Robs": 0.8387990062432037
+      },
+      {
+        "inclusion_prob_ratio_nt_over_other": 6.0,
+        "implied_true_rate_ratio_if_Robs": 0.6989991718693364
+      },
+      {
+        "inclusion_prob_ratio_nt_over_other": 7.0,
+        "implied_true_rate_ratio_if_Robs": 0.599142147316574
+      },
+      {
+        "inclusion_prob_ratio_nt_over_other": 8.0,
+        "implied_true_rate_ratio_if_Robs": 0.5242493789020023
+      }
+    ],
+    "equation": "R_obs = R_true * (s_NT / s_other)"
+  },
+  "ward_influence": {
+    "n_wards": 18,
+    "n_wards_nt": 12,
+    "n_wards_other": 6,
+    "n_hospitals": 13,
+    "median_inpatients_per_ward": 3.5,
+    "min_inpatients_per_ward": 2,
+    "max_inpatients_per_ward": 21,
+    "largest_ward_share_of_inpatients": 0.2413793103448276,
+    "top3_wards_share_of_inpatients": 0.4367816091954023,
+    "largest_ward_label": "I:A102"
+  },
+  "loo_patient_days_range": {
+    "min": 2.8987906833404837,
+    "max": 5.691850399507454,
+    "median": 4.039804037421312
+  },
+  "table_s3_status": "Supporting Table S3 cited in Gu et al. 2026 but not retrieved here (Wiley supplement HTTP 403; not in PMC full text). Routes: journal SI, corresponding authors, publisher support \u2014 not GitHub/Kaggle."
+}

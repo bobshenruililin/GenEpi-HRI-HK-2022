@@ -1,0 +1,5 @@
+first_sampling_order,wards,cases
+inpatient_before_non_inpatient,5,48
+inpatient_only,6,16
+non_inpatient_before_inpatient,4,38
+same_day_first_sample,3,24
