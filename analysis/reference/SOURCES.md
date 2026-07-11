@@ -47,3 +47,7 @@
   they are not an independent sequencing-effort denominator.
 - Annual FY2021-22 throughput is only an approximation for the 83-day study window.
 
+## Optional polish open data (2026-07-11)
+- HA open JSON: `ipdpdd-en.json`, `patientday-en.json`, `hosp-bed-en.json` (cached under `ha_opendata_cache/`).
+- Cluster extracts: `ha_cluster_throughput_open_2021_22.csv`, `ha_cluster_throughput_open_2022_23.csv`.
+- Hospital-letter rates use internal joins only; `polish_hospital_letter_rates_fy2022_23.csv` has anonymized letters, not names.

@@ -1,0 +1,8 @@
+ha_cluster,ip_discharges,n_hospitals_open,patient_days,beds_total,n_hospitals_bed_table,financial_year,sequenced_all,sequenced_inpatient,sequenced_staff_outpatient,genomic_representation,inpatient_per_1000_beds,inpatient_per_100k_discharges,inpatient_per_100k_patient_days,in_official_bulletins,mention_days
+HKEC,94630.0,6,831929.0,6620,6,2022-23,6,6,0,represented,0.9063444108761329,6.340483990277924,0.7212153921788999,True,4
+HKWC,99626.0,7,608717.0,6158,7,2022-23,0,0,0,not_represented_in_genomic_sample,,,,True,1
+KCC,194463.0,8,1577706.0,12136,8,2022-23,0,0,0,not_represented_in_genomic_sample,,,,True,10
+KEC,113254.0,3,819794.0,6000,3,2022-23,5,5,0,represented,0.8333333333333334,4.414855104455472,0.6099093186824983,True,1
+KWC,195991.0,5,1471927.0,10048,5,2022-23,12,8,4,represented,0.7961783439490446,4.081820083575266,0.5435052145928432,True,9
+NTEC,163701.0,7,1349892.0,10392,7,2022-23,39,24,15,represented,2.3094688221709005,14.660875620796451,1.777920011378688,True,9
+NTWC,132874.0,5,1315676.0,9782,5,2022-23,64,44,20,represented,4.498057656920875,33.11407799870554,3.3442884114326015,True,12

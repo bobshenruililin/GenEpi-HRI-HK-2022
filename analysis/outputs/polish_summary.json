@@ -1,0 +1,79 @@
+{
+  "fy_throughput_sensitivity": [
+    {
+      "financial_year": "2021-22",
+      "ratio_per_1000_beds": 4.039954519855059,
+      "ratio_per_100k_discharges": 4.926832775603937,
+      "ratio_per_100k_patient_days": 4.12964654491604,
+      "pooled_nt_per_1000_beds": 3.43226327478296,
+      "pooled_urban_per_1000_beds": 0.8495796816311929
+    },
+    {
+      "financial_year": "2022-23",
+      "ratio_per_1000_beds": 4.021392829749599,
+      "ratio_per_100k_discharges": 4.87380044987289,
+      "ratio_per_100k_patient_days": 4.193995031216018,
+      "pooled_nt_per_1000_beds": 3.370675126400317,
+      "pooled_urban_per_1000_beds": 0.8381859890594671
+    }
+  ],
+  "hospital_letter": {
+    "n_confirmed_hospitals": 13,
+    "n_with_open_denominator": 12,
+    "n_without_open_denominator": 1,
+    "pooled_among_joined": {
+      "NT": {
+        "n_hospitals": 7,
+        "inpatients": 66,
+        "beds": 16230.0,
+        "per_1000_beds": 4.066543438077634
+      },
+      "Urban_in_sample": {
+        "n_hospitals": 5,
+        "inpatients": 19,
+        "beds": 12210.0,
+        "per_1000_beds": 1.556101556101556
+      },
+      "pooled_ratio_nt_urban": 2.6132892304698903
+    },
+    "note": "Hospital-letter rates join open HA beds/discharges/patient-days via an internal code map; published table shows anonymized letters only."
+  },
+  "density_definition_sensitivity": {
+    "dens_pop2017_land_core": {
+      "mean_nt": 4419.651121742027,
+      "mean_urban": 16131.293908639345,
+      "nt_over_urban": 0.27397995143929643
+    },
+    "dens_pop2021_land_core": {
+      "mean_nt": 4461.337993795704,
+      "mean_urban": 15052.407412951718,
+      "nt_over_urban": 0.2963870078321813
+    },
+    "dens_pop2021_land_2021": {
+      "mean_nt": 4461.337993795704,
+      "mean_urban": 15052.407412951718,
+      "nt_over_urban": 0.2963870078321813
+    },
+    "dens_pop2021_islands_split": {
+      "mean_nt": 4461.337993795704,
+      "mean_urban": 7205.140821602595,
+      "nt_over_urban": 0.6191881747015454
+    },
+    "hosp_per_100km2_core": {
+      "mean_nt": 2.094489800327284,
+      "mean_urban": 10.536211358710316,
+      "nt_over_urban": 0.19878965303745194
+    },
+    "hosp_per_100km2_2021": {
+      "mean_nt": 2.094489800327284,
+      "mean_urban": 10.536211358710316,
+      "nt_over_urban": 0.19878965303745194
+    }
+  },
+  "density_discordance_robust": true,
+  "claims": [
+    "FY2022-23 open denominators leave NT sample concentration intact",
+    "Hospital-letter scaling (joined subset) still shows NT concentration",
+    "NT remains less dense than urban under alternative land/pop definitions"
+  ]
+}

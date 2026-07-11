@@ -54,6 +54,13 @@ Worth considering **only** if you want a follow-on paper months later. Typical a
 
 For the current Laidlaw note: **do not wait** on this.
 
-## Recommended “further work” sentence (manuscript)
+## Optional polish status (implemented 2026-07-11)
 
-Already added to `manuscript/main.tex`: position the note as ascertainment-aware sample geography + descriptive first-detection patterns; list public-denominator polish as feasible; state that selection-adjusted incidence needs HA/parent access.
+| Item | Result |
+|---|---|
+| FY2022–23 open throughput | Pooled NT/urban inpatient ratios ≈4.02 / 4.87 / 4.19 (beds/discharges/patient-days) vs ≈4.04 / 4.93 / 4.13 for FY2021–22 |
+| Hospital-letter scaling | 12/13 confirmed hospitals joined; pooled letter-level NT/urban ≈2.6×; names not published |
+| Density definitions | NT/urban density ratio remains <1 under pop2017/2021 and Islands-split land (≈0.27–0.62) |
+
+Script: `scripts/7.optional_polish_public_data.py`. Outputs: `analysis/outputs/polish_*`.
+
