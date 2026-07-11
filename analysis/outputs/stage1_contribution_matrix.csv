@@ -1,0 +1,10 @@
+item,source,this_note
+162 genomes / 29 suspected / 18 confirmed / 126 confirmed genomes,Gu et al. 2026,Reproduced as cohort definition
+51.9% coverage of official nosocomial cases,Gu et al. 2026,Cited; not re-estimated
+2/18 phylogenetically supported staff-before-inpatient clusters,Gu et al. 2026,"Cited; temporal taxonomy is complementary, not equivalent"
+Mobility GAM null after time smooth,Gu et al. 2026,Cited as background
+API / BA.5.6 single-ward deep outbreak description,Gu et al. 2026 (genomic),Sensitivity exclusion of BA.5.6 ward only
+Ward-level first-detection order taxonomy (all confirmed wards),—,New descriptive analysis
+HA-cluster sample concentration with inpatient-only throughput scaling,—,"New; rates are sample concentration, not incidence"
+Official bulletin presence vs genomic representation audit,—,New ascertainment-aware geographic audit
+Leave-one-out / BA.5.6 exclusion / tie-window sensitivity,—,New robustness checks

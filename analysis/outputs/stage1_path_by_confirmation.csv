@@ -1,0 +1,9 @@
+confirmed,path,wards,cases
+False,inpatient_before_staff_outpatient,2,6
+False,inpatient_only,2,5
+False,staff_outpatient_before_inpatient,2,10
+False,staff_outpatient_only,5,15
+True,inpatient_before_staff_outpatient,5,48
+True,inpatient_only,6,16
+True,same_day,3,24
+True,staff_outpatient_before_inpatient,4,38

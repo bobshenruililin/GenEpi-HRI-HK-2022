@@ -1,0 +1,5 @@
+path,wards,cases,inpatient,staff_outpatient
+inpatient_before_staff_outpatient,5,48,40,8
+staff_outpatient_before_inpatient,4,38,18,20
+same_day,3,24,13,11
+inpatient_only,6,16,16,0
