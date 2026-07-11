@@ -306,6 +306,28 @@ Among sequenced persons linked to parent-confirmed hospital clusters, both staff
 Sampled cases were concentrated in New Territories clusters after crude patient-throughput scaling, but geographically incomplete and potentially differential genomic ascertainment prevents inference about underlying nosocomial incidence.
 Complete hospital-level outbreak, throughput, staffing, and sequencing denominators are required to test whether long-stay or psychiatric case mix---or selection alone---explains the observed concentration.
 
+\section{Further work (with current data limits)}
+With only this repository and public HA/Census sources, the highest-value next steps are documentation and denominator hygiene---not a selection-adjusted incidence model.
+
+\paragraph{Feasible without new restricted data.}
+\begin{itemize}[leftmargin=1.4em,itemsep=0.15em]
+  \item Update cluster throughput to HA Statistical Report / data.gov.hk extracts for FY2022--23 (closer to the study window than FY2021--22).
+  \item Where open hospital-level beds/discharges/patient-days exist, repeat inpatient scaling at hospital letter level \emph{without} publishing a name crosswalk.
+  \item Expand density sensitivity using alternative land definitions (total vs core districts) while keeping the claim as sample discordance, not incidence paradox.
+  \item Keep psychiatric/long-stay share as a candidate explanation with leave-one-out already reported; avoid causal language.
+\end{itemize}
+
+\paragraph{Not recoverable from GitHub/Kaggle.}
+Official cumulative nosocomial counts by hospital (Table~S3), specimens submitted versus sequenced, staff FTE-days, visitor volumes, and ward-level occupancy are not in public ML repositories.
+Community GISAID sets and other HK genomic repos do not supply HA outbreak registries or sampling fractions for this window.
+
+\paragraph{Only via HA / parent-team data access.}
+An HA research-data application (or collaboration with Gu et al.) would be required for cluster- or hospital-specific official nosocomial totals and sequencing inclusion denominators.
+That path enables inverse-probability or quantitative bias analysis; it is not assumed for this Laidlaw secondary note.
+
+\paragraph{Recommended positioning.}
+Treat the present manuscript as a focused secondary research note on \emph{ascertainment-aware geographic reanalysis of a published genomic sample}, with mixed first-detection patterns as a descriptive companion result.
+
 \section*{Data and code}
 Analysis scripts: \texttt{scripts/6.stage1\_peer\_review\_revision.py} (primary Stage-1 outputs), with earlier exploratory scripts retained for provenance.
 Tabulated outputs: \texttt{analysis/outputs/stage1\_*}.
