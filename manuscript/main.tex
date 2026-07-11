@@ -1,6 +1,5 @@
 \documentclass[11pt,a4paper]{article}
 
-% ---- packages ----
 \usepackage[margin=1in]{geometry}
 \usepackage{times}
 \usepackage{setspace}
@@ -13,7 +12,6 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{caption}
-\usepackage{subcaption}
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage[numbers,sort&compress]{natbib}
@@ -29,13 +27,13 @@
 \onehalfspacing
 \setlength{\parskip}{0.35em}
 
-\title{\textbf{Dual Seeding under a Geographic Paradox:\\
-Hospital-Associated SARS-CoV-2 in Hong Kong after Visit-Schedule Relaxation}}
+\title{\textbf{Mixed First-Detection Patterns and Geographic Concentration of Sequenced Hospital-Associated SARS-CoV-2 Cases in Hong Kong, May--August 2022:\\
+A Secondary Analysis}}
 \author{
 Shen Ruililin\\[0.35em]
 \small Laidlaw Scholars Programme, The University of Hong Kong\\[0.6em]
-\small Companion research note to Shen et al.\ (2026)\\
-\small\textit{Exploratory genomic-epidemiologic reanalysis --- first draft}
+\small Secondary analysis of Gu et al.\ (2026)\\
+\small\textit{Revised draft after peer-review reframing --- not a claim of dual seeding or incidence excess}
 }
 \date{11 July 2026}
 
@@ -45,263 +43,310 @@ Shen Ruililin\\[0.35em]
 \begin{abstract}
 \noindent
 \textbf{Background.}
-After Hong Kong relaxed hospital visitation in May 2022, nosocomial SARS-CoV-2 clusters re-emerged amid Phase-2 community transmission.
-A recent multihospital genomic study characterised ward-level transmission and found no independent association between community mobility and community-to-hospital viral introductions.
-Here we ask two further questions that study left open: (i)~whether ward outbreaks are initiated by a single dominant route or by \emph{dual seeding}, and (ii)~why sequenced hospital-associated infections concentrate in New Territories (NT) clusters despite lower population and hospital geographic density.
+Gu et al.\ characterised hospital-associated SARS-CoV-2 clusters in Hong Kong during a period of relaxed visitation (28~May--18~August~2022), confirming 18 nosocomial clusters (126 genomes) among 29 investigated ward units (162 genomes) and finding no independent association between community mobility and community-to-hospital introductions after time adjustment~\cite{gu2026hai}.
+Here we ask two narrower secondary questions: (i)~how first-detection order by case type is distributed across confirmed wards, and (ii)~whether the geographic distribution of the sequenced sample persists under crude health-system throughput scaling, once genomic representation is audited against official reporting.
 
 \textbf{Methods.}
-We reanalysed the published hospital-associated sequence plot table ($n=162$ cases; 17 anonymised hospitals; 28~May--18~Aug~2022), linked cases to Hospital Authority (HA) clusters, classified ward-level initiation pathways from first detection dates, and standardised burden by HA beds, inpatient discharges, and patient-days (FY2021--22).
-District census data quantified catchment density.
-Official HA nosocomial press bulletins were mined for an ascertainment footprint (presence of clusters by hospital/cluster).
+We reanalysed the published anonymised plot table.
+Primary analyses used the 18 parent-confirmed wards ($n=126$); sensitivity analyses used all 29 investigated units ($n=162$).
+Ward-level first-detection order compared earliest staff/outpatient versus inpatient detection dates (same-day and $\pm$1--2-day windows as sensitivity).
+Inpatient counts were scaled by HA beds, discharges, and patient-days; staff/outpatient counts were reported separately.
+Unrepresented HA clusters were coded as missing genomic representation, not zero burden.
+Leave-one-hospital, leave-one-ward, and BA.5.6-ward exclusions assessed robustness.
 
 \textbf{Results.}
-Staff/outpatient-first and inpatient-first pathways both contributed substantial burden (48 vs 54 cases among ordered dual-type wards); pathway mix did not differ detectably between NT and urban clusters.
-NTWC+NTEC comprised 82.7\% of sequenced hospital-associated cases despite $\sim$0.27$\times$ mean population density and $\sim$0.20$\times$ hospital geographic density relative to urban clusters in the sample.
-The NT excess survived standardisation by beds ($\sim$5.7$\times$), discharges ($\sim$6.9$\times$), and patient-days ($\sim$5.7$\times$).
-Kowloon East provided a negative control (low hospital density, low sequenced burden).
-Official bulletins mentioned Kowloon Central Cluster hospitals that are absent from the sequenced table, indicating uneven genomic coverage; NT/psychiatric hospitals (notably Castle Peak) were also prominent in public reporting.
+Among confirmed wards, both staff/outpatient-before-inpatient (4 wards, 38 persons) and inpatient-before-staff/outpatient (5 wards, 48 persons) first-detection orders were observed, plus same-day and single-type patterns.
+A regional Fisher comparison of ordered pathways was severely underpowered (OR~$0.75$, exact $p=1.0$, 95\% CI $0.03$--$17.5$; $n=9$ wards).
+NTWC+NTEC held 103/126 (81.7\%) sequenced confirmed-ward persons and 68/87 (78.2\%) sequenced confirmed-ward inpatients.
+Pooled NT/urban ratios of sequenced inpatients were approximately 4.0$\times$ per 1{,}000 beds, 4.9$\times$ per 100{,}000 discharges, and 4.1$\times$ per 100{,}000 patient-days among represented clusters; leave-one-out pooled bed ratios ranged $\sim$2.6--5.5, and excluding the BA.5.6 ward reduced the pooled bed ratio to $\sim$2.8.
+Official bulletins mentioned hospitals in clusters absent from the genomic table (notably KCC and HKWC), so those clusters cannot be treated as zero burden.
 
 \textbf{Conclusions.}
-Hospital-associated SARS-CoV-2 in this window was dually seeded and geographically structured, not a simple function of urban density or citywide mobility.
-Throughput denominators do not erase the NT excess; ascertainment is uneven and must temper causal language.
-The findings support ward- and case-mix-targeted infection prevention---including long-stay/psychiatric settings---alongside visitor screening.
+The sequenced sample shows mixed first-detection patterns and New Territories concentration after crude inpatient-throughput scaling.
+Geographically incomplete and potentially differential genomic ascertainment prevents inference about underlying nosocomial incidence, density-driven risk, psychiatric causation, or visitation policy effects.
+Complete hospital-level outbreak, staffing, and sequencing denominators are required for selection-aware analysis.
 \end{abstract}
 
 \noindent\textbf{Keywords:}
-SARS-CoV-2; nosocomial transmission; dual seeding; geographic concentration; New Territories; genomic epidemiology; Hong Kong
+SARS-CoV-2; hospital-associated infection; genomic surveillance; first-detection order; ascertainment; Hong Kong; secondary analysis
 
 \section{Introduction}
 
-Hong Kong's fifth COVID-19 wave forced a transition from near-elimination to managed endemicity.
-In May 2022, authorities phased in relaxed hospital visitation while community incidence rebuilt into Phase~2 of the fifth wave~\cite{shen2026hai}.
-Understanding how SARS-CoV-2 entered and spread within hospitals during that transition matters for future respiratory-pathogen preparedness: visitation has clear benefits for patients~\cite{shen2026hai}, yet wards remain vulnerable when community prevalence is high.
-Hong Kong hospitals faced intense Omicron pressure even with high healthcare-worker vaccination coverage~\cite{wong2022hcw}, and multi-bedded cubicle design facilitated onward spread despite enhanced infection-prevention measures~\cite{wee2022cubicles}.
+Gu et al.\ sequenced 162 genomes linked to 29 suspected ward clusters across 17 public hospitals (28~May--18~August~2022), confirmed 18 nosocomial clusters (126 genomes covering 51.9\% of officially reported nosocomial cases in the window), described predominantly intraward transmission, and found no significant mobility association with introduction rates after adjusting for time trends~\cite{gu2026hai}.
+Phylogenetically supported staff-before-inpatient order was reported in only 2/18 confirmed clusters~\cite{gu2026hai}.
 
-International genomic epidemiology has repeatedly shown that hospital SARS-CoV-2 dynamics are multi-route rather than single-pathway.
-Combined epidemiological--genomic reconstructions across two UK pandemic waves found shifting contributions of staff--patient transmission and strong location hotspots~\cite{lindsey2022natcomms}.
-Contact-aware analyses demonstrate that healthcare-worker (HCW) location data reveal cryptic links missed by patient-only tracing~\cite{ellingford2021elife}, while on-demand hospital genomics documents multiple coexisting transmission modes and can refute epidemiologically suspected nosocomial links~\cite{benoit2023ash}.
-At the same time, many epidemiologically labelled ``outbreaks'' comprise multiple genomic introductions rather than a single chain~\cite{haanappel2023aric}.
-These findings motivate an explicit dual-seeding taxonomy---staff/outpatient bridges versus inpatient introductions---rather than assuming a single dominant entry route.
+International work already shows that hospital outbreaks may involve patients, healthcare workers (HCWs), visitors, or multiple introductions; that staff--patient networks transmit in both directions; and that epidemiologically labelled outbreaks may hide several genomic introductions~\cite{lindsey2022natcomms,ellingford2021elife,benoit2023ash,haanappel2023aric,abbas2021aric}.
+Psychiatric and long-stay settings pose distinctive IPC challenges~\cite{chun2020frontiers,rovers2020aric,kim2023medicina}, and facility outbreak geography is not reducible to urban density alone~\cite{doggui2025scirep,espenhain2023eurgeriatr}.
+Hong Kong hospitals faced intense Omicron pressure despite high HCW vaccination coverage~\cite{wong2022hcw}, and multi-bedded cubicles facilitated onward spread~\cite{wee2022cubicles}.
 
-Case-mix further structures risk.
-Closed psychiatric and long-term mental-health settings have recorded extreme attack rates and IPC challenges poorly served by acute-ward protocols~\cite{chun2020frontiers,rovers2020aric,kim2023medicina}.
-Geographic patterning of facility outbreaks is real but not reducible to urban density alone: some analyses find higher outbreak odds outside the densest metropolitan cores after adjustment~\cite{doggui2025scirep}, whereas other systems show capital-region concentration~\cite{espenhain2023eurgeriatr}.
-Against that backdrop, a New Territories excess of sequenced hospital-associated infections in Hong Kong is scientifically interesting precisely because NT catchments are \emph{less} dense.
-
-Shen et al.\ sequenced 162 genomes linked to 29 suspected ward clusters across 17 public hospitals (28~May--18~August~2022), confirmed 18 nosocomial clusters (126 genomes), showed predominantly intraward transmission without resolved interward spread, and inferred more community$\to$hospital than hospital$\to$community Markov jumps~\cite{shen2026hai}.
-After adjusting for time trends, generalised additive models found no significant association between introduction rates and standard mobility indices~\cite{shen2026hai}.
-
-Two gaps remain.
-First, \emph{how} wards are seeded: the parent analysis noted phylogenetic staff-before-inpatient order in only 2/18 confirmed clusters~\cite{shen2026hai}, but a broader temporal taxonomy of staff/outpatient versus inpatient first detections has not been quantified across all investigated wards.
-Second, \emph{where} burden concentrates: sequenced hospital-associated infections are heavily skewed toward New Territories West and East clusters (NTWC, NTEC), yet New Territories districts are less densely populated and have fewer hospitals per land area than urban catchments---a pattern that challenges naive ``dense city, more hospital outbreaks'' intuition.
+\paragraph{What this note adds.}
+This is a post hoc secondary analysis of the Gu et al.\ plot table.
+It does \emph{not} re-estimate phylogenies, does \emph{not} identify seeding mechanisms, and does \emph{not} estimate true nosocomial incidence.
+Its defensible contribution is the combination of: (i)~a descriptive ward-level first-detection-order taxonomy across confirmed clusters; (ii)~HA-cluster concentration of the sequenced sample under inpatient-compatible throughput denominators; and (iii)~an explicit audit of geographic genomic representation against independent official bulletin presence.
 
 \paragraph{Research questions.}
 \begin{enumerate}[leftmargin=1.4em,itemsep=0.2em]
-  \item Are hospital-associated clusters in this window consistent with a single dominant initiation route, or with \textbf{dual seeding} (staff/outpatient bridges and inpatient introductions)?
-  \item Does the New Territories concentration of sequenced hospital-associated infections persist after standardisation by hospital throughput, and can density or ascertainment explain it?
+  \item How is first-detection order by case type distributed across parent-confirmed wards?
+  \item Does New Territories concentration of sequenced confirmed-ward cases persist under crude beds/discharges/patient-days scaling, and what does an ascertainment presence audit imply for interpreting that concentration?
 \end{enumerate}
 
-\paragraph{Contribution.}
-This companion note does not re-estimate phylogenies.
-It delivers a manuscript-ready descriptive and standardised reanalysis: a dual-seeding taxonomy; a quantified density paradox with negative controls; admissions/patient-day denominators; and an honest ascertainment audit against public HA bulletins.
+\section{Parent study versus this note}
 
-\section{Methods}
-
-\subsection{Data sources}
-\begin{itemize}[leftmargin=1.4em,itemsep=0.15em]
-  \item \textbf{Hospital-associated cases.} Anonymised plot table from the parent study ($n=162$ sequenced cases; hospitals A--Q; HA cluster labels; ward; case type; lineage; date)~\cite{shen2026hai}.
-  \item \textbf{HA capacity and throughput.} Beds (31~Mar~2022) and FY2021--22 inpatient discharges and patient-days from HA Statistical Report cluster extracts~\cite{ha2022stat}.
-  \item \textbf{Catchment demography.} 2021 Population Census district populations and land areas, mapped to conventional HA cluster catchments~\cite{census2021,legco2017}.
-  \item \textbf{Official reporting footprint.} HA press releases on info.gov.hk announcing nosocomial COVID-19 clusters during the study window (presence of hospitals in nosocomial tables/narratives).
-  \item \textbf{Parent coverage anchor.} Confirmed genomic clusters represented 51.9\% of officially reported nosocomial cases in the window~\cite{shen2026hai}.
-\end{itemize}
-
-\subsection{Dual-seeding classification}
-For each hospital--ward combination, we recorded the earliest detection date by case type.
-Pathways were labelled:
-\textit{staff\_first}, \textit{inpatient\_first}, \textit{same\_day}, \textit{staff\_only}, or \textit{inpatient\_only}.
-``Staff'' here aggregates Outpatient/Staff in the plot table.
-This is a \emph{temporal first-detection} definition, complementary to---not identical with---the parent paper's phylogenetic staff-index criterion~\cite{shen2026hai}.
-Among wards with both staff and inpatient detections and a clear order, we tested NT versus urban pathway mix with Fisher's exact test.
-
-\subsection{Geographic and density metrics}
-HA clusters were grouped as New Territories (NTWC, NTEC) versus urban clusters present in the sequenced table (KWC, KEC, HKEC).
-Population density used catchment population (2017 planning projection) divided by core district land area.
-Hospital and bed geographic density used HA facility counts and beds per 100~km$^2$ of core land area.
-Islands/Lantau splits for HKEC/KWC were excluded from core land area (conservative for urban density).
-
-\subsection{Denominator standardisation}
-Sequenced hospital-associated case counts were standardised as:
-cases per 1{,}000 beds; per 100{,}000 annual inpatient discharges; and per 100{,}000 annual inpatient patient-days.
-Annual FY2021--22 throughput is an imperfect proxy for an 83-day window; we therefore emphasise relative NT/urban ratios rather than absolute window incidence.
-Mentally-ill patient-day share was computed as a case-mix marker.
-
-\subsection{Ascertainment audit}
-Because the parent supplement Table~S3 (official case totals by hospital) was not recoverable in this environment (curated Excel gitignored; publisher supplement inaccessible), we did \emph{not} invent cluster-level coverage fractions from daily press tables (which are incremental and reconstruct only a small fraction of the implied $\sim$243 official cases).
-Instead we contrast \textbf{presence}: HA clusters appearing in official nosocomial bulletins versus those appearing in the sequenced plot table, anchored by the published 51.9\% overall coverage statistic~\cite{shen2026hai}.
-
-\subsection{Ethics and anonymisation}
-Analyses use aggregated, anonymised hospital codes as in the parent study.
-HA cluster labels provide geographic context already used publicly~\cite{shen2026hai}.
-
-\section{Results}
-
-\subsection{Dual seeding is a shared mechanism}
-Across 29 wards, ordered dual-type pathways contributed 48 staff/outpatient-first and 54 inpatient-first cases; same-day detections added 24 (Table~\ref{tab:pathways}).
-Staff-only and inpatient-only wards contributed smaller burdens.
-Fisher's exact test comparing NT versus urban wards for staff-first versus inpatient-first yielded OR~$=0.33$, $p=0.56$ ($n=13$ wards): no evidence of different dominant routes by region.
-Among inpatients with known admission-to-positive interval (API), 74/90 (82\%) had API~$\ge 3$~days, consistent with substantial in-hospital acquisition once infection is inside the ward~\cite{shen2026hai}.
+Table~\ref{tab:contrib} separates inherited findings from new analyses.
 
 \begin{table}[H]
 \centering
-\caption{Ward-level temporal initiation pathways (sequenced hospital-associated cases).}
-\label{tab:pathways}
-\begin{tabular}{lrr}
+\caption{Contribution matrix: Gu et al.\ (2026) versus this secondary note.}
+\label{tab:contrib}
+\begin{tabular}{p{0.42\textwidth}p{0.24\textwidth}p{0.26\textwidth}}
 \toprule
-Pathway & Wards & Cases \\
+Item & Gu et al.\ 2026 & This note \\
 \midrule
-Staff/outpatient first & 6 & 48 \\
-Inpatient first & 7 & 54 \\
-Same day & 3 & 24 \\
-Staff/outpatient only & 5 & 15 \\
-Inpatient only & 8 & 21 \\
+162 / 29 suspected / 18 confirmed / 126 genomes; 51.9\% coverage & Primary & Cohort definition only \\
+Phylogenetic staff-before-inpatient in 2/18 clusters; mobility GAM null; API / lineage structure & Primary & Cited; not re-estimated \\
+Ward-level first-detection-order taxonomy & --- & New (descriptive) \\
+Inpatient-only throughput scaling of sample concentration & --- & New (not incidence) \\
+Official-bulletin presence vs genomic representation & --- & New audit \\
+Leave-one-out / BA.5.6-ward / tie-window checks & --- & New robustness \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Methods}
+
+\subsection{Data}
+Anonymised plot table from Gu et al.\ ($n=162$ sequenced persons; hospitals A--Q; HA cluster; ward; case type; lineage; date)~\cite{gu2026hai}.
+Wards without a trailing asterisk match the parent-confirmed nosocomial set (18 wards, 126 genomes); starred wards (11 units, 36 genomes) were investigated but not confirmed as nosocomial genomic clusters and are reserved for sensitivity analyses.
+HA beds (31~Mar~2022) and FY2021--22 discharges and patient-days come from HA Statistical Report extracts~\cite{ha2022stat}.
+Catchment demography uses 2017 planning projections with core district land areas~\cite{legco2017,census2021}; these are coarse administrative measures, not closed cohorts.
+Official HA nosocomial press bulletins supply a presence footprint (hospitals/clusters mentioned), not cumulative case totals (Table~S3 was not recoverable here).
+
+\subsection{First-detection order}
+For each hospital--ward unit we recorded the earliest detection date among staff/outpatient versus inpatient case types.
+Categories: staff/outpatient before inpatient; inpatient before staff/outpatient; same-day first detection; staff/outpatient only; inpatient only.
+This is a \emph{temporal first-detection} descriptor, not infection order, introduction source, or transmission direction.
+Visitors are unobserved.
+Staff/outpatient remains a combined category because the plot table does not separate them.
+Sensitivity: treat detections within $\pm$1 or $\pm$2 days as the same window.
+Regional comparison of ordered pathways used Fisher's exact test with an exact odds-ratio confidence interval; with few wards this test is exploratory and severely imprecise.
+
+\subsection{Throughput scaling and estimands}
+We report four distinct quantities:
+\begin{enumerate}[leftmargin=1.4em,itemsep=0.15em]
+  \item Sequenced confirmed-ward \textbf{inpatients} per 1{,}000 beds, per 100{,}000 discharges, and per 100{,}000 patient-days (patient-compatible denominators).
+  \item Sequenced confirmed-ward \textbf{staff/outpatient} counts (descriptive; staff FTE denominators unavailable).
+  \item All linked sequenced persons per confirmed ward (outbreak size; descriptive).
+  \item Genomic representation by HA cluster (present vs not represented).
+\end{enumerate}
+We do \emph{not} call total persons per patient-days an HAI incidence rate.
+Annual FY2021--22 throughput is an imperfect proxy for an 83-day window; we emphasise relative NT/urban ratios among represented clusters.
+Pooled ratios (sum of numerators / sum of denominators) and means of cluster-level rates are both reported.
+Leave-one-hospital-out, leave-one-ward-out, and exclusion of the single BA.5.6 ward assess point influence.
+
+\subsection{Ascertainment audit}
+Because hospital-level official totals and sequencing-submission denominators are unavailable, we contrast \textbf{presence}: HA clusters appearing in official nosocomial bulletins versus those appearing in the sequenced confirmed-ward table, anchored by the published 51.9\% overall coverage statistic~\cite{gu2026hai}.
+Overall coverage does not bound cluster-specific sampling fractions; differential ascertainment could generate large apparent regional ratios.
+
+\subsection{Ethics and anonymisation}
+Analyses use aggregated anonymised hospital codes as in Gu et al.~\cite{gu2026hai}.
+We avoid publishing inferred code-to-name crosswalks.
+HA cluster labels provide geographic context already used publicly.
+
+\section{Results}
+
+\subsection{Mixed first-detection patterns among confirmed wards}
+Among 18 confirmed wards, ordered dual-type pathways contributed 38 persons in staff/outpatient-before-inpatient wards ($n=4$) and 48 in inpatient-before-staff/outpatient wards ($n=5$); same-day first detection added 24 persons in 3 wards; inpatient-only wards contributed 16 (Table~\ref{tab:pathways}; Figure~\ref{fig:first}).
+No confirmed ward was staff/outpatient-only (those units were starred/non-confirmed).
+Expanding the same-window definition to $\pm$1 or $\pm$2 days did not reassign the ordered pathways in this table (same-day wards remained the only ties).
+
+Among confirmed wards with a clear order ($n=9$), the NT versus urban 2$\times$2 counts were 3:4 versus 1:1 (staff/outpatient-before : inpatient-before).
+Fisher OR~$=0.75$, exact $p=1.0$, 95\% CI $0.03$--$17.5$.
+The small sample provided no precise evidence about regional differences in first-detection order; failure to detect a difference is not evidence of equivalence.
+
+Cross-tabulation against confirmation status (Table~\ref{tab:xtab}) shows that staff/outpatient-only pathways were confined to non-confirmed (starred) units, while same-day detections occurred only among confirmed wards in this sample.
+
+\begin{table}[H]
+\centering
+\caption{First-detection order among 18 parent-confirmed wards (primary cohort).}
+\label{tab:pathways}
+\begin{tabular}{lrrr}
+\toprule
+First-detection pattern & Wards & Persons & Inpatients \\
+\midrule
+Staff/outpatient before inpatient & 4 & 38 & 18 \\
+Inpatient before staff/outpatient & 5 & 48 & 40 \\
+Same-day first detection & 3 & 24 & 13 \\
+Inpatient only & 6 & 16 & 16 \\
+Staff/outpatient only & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{First-detection order by parent confirmation status (all 29 investigated units).}
+\label{tab:xtab}
+\begin{tabular}{lrrrr}
+\toprule
+Pattern & Confirmed wards & Confirmed persons & Non-confirmed wards & Non-confirmed persons \\
+\midrule
+Staff/outpatient before inpatient & 4 & 38 & 2 & 10 \\
+Inpatient before staff/outpatient & 5 & 48 & 2 & 6 \\
+Same day & 3 & 24 & 0 & 0 \\
+Staff/outpatient only & 0 & 0 & 5 & 15 \\
+Inpatient only & 6 & 16 & 2 & 5 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.98\textwidth]{figures/fig_dual_seeding_by_region.pdf}
-\caption{Dual-seeding composition by region (case counts). Staff/outpatient-linked and inpatient-linked routes both matter in New Territories and urban clusters in the sample.}
-\label{fig:dual}
+\includegraphics[width=0.98\textwidth]{figures/fig_first_detection_by_region.pdf}
+\caption{First-detection order composition by region among parent-confirmed wards (case counts). This describes detection timing, not seeding mechanism.}
+\label{fig:first}
 \end{figure}
 
-\subsection{Geographic concentration despite lower density}
-NTWC+NTEC accounted for 134/162 (82.7\%) sequenced hospital-associated cases.
-Mean catchment population density for NT clusters was $\sim$0.27$\times$ that of urban in-sample clusters; hospitals per 100~km$^2$ $\sim$0.20$\times$; beds per 100~km$^2$ $\sim$0.29$\times$ (Figure~\ref{fig:density}).
-Kowloon East Cluster (KEC) had similarly low hospital geographic density ($\sim$2 per 100~km$^2$) but low sequenced burden---a negative control showing that low density is not sufficient for high observed hospital-associated infection.
+\subsection{Sample concentration after inpatient-throughput scaling}
+NTWC+NTEC accounted for 103/126 (81.7\%) sequenced persons in confirmed wards and 68/87 (78.2\%) sequenced confirmed-ward inpatients (Table~\ref{tab:denom}).
+Among represented clusters, pooled NT/urban ratios of sequenced inpatients were $\sim$4.0$\times$ per 1{,}000 beds, $\sim$4.9$\times$ per 100{,}000 discharges, and $\sim$4.1$\times$ per 100{,}000 patient-days; means of cluster rates were similar (Figure~\ref{fig:rates}).
+Leave-one-hospital-out pooled bed ratios ranged $\sim$2.6--5.5 (median $\sim$3.9); leave-one-ward-out ranged $\sim$2.8--5.5 (median $\sim$3.9).
+Excluding the BA.5.6 ward reduced the pooled bed ratio to $\sim$2.8, indicating point influence from a single deep outbreak without erasing NT concentration.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.98\textwidth]{figures/fig_density_paradox.pdf}
-\caption{Density paradox at HA-cluster scale. New Territories clusters (green) combine lower population and hospital geographic density with higher sequenced hospital-associated infection rates per 1{,}000 beds.}
-\label{fig:density}
-\end{figure}
-
-\subsection{The NT excess survives throughput denominators}
-Standardising by beds, discharges, and patient-days left a several-fold NT excess relative to urban in-sample clusters (Table~\ref{tab:denom}; Figure~\ref{fig:denom}):
-approximately 5.7$\times$ per 1{,}000 beds, 6.9$\times$ per 100{,}000 discharges, and 5.7$\times$ per 100{,}000 patient-days (means of cluster-level rates).
-NTWC showed the highest mentally-ill patient-day share (19.2\% of cluster patient-days), linking geography to long-stay case-mix (Figure~\ref{fig:psych}).
-All 22 BA.5.6 sequences in the plot table arose from a single hospital ward with almost exclusively API~$\ge 3$ inpatients---a deep nosocomial signature inside NTWC~\cite{shen2026hai}.
+Staff/outpatient sequenced persons (39/126) are reported in Table~\ref{tab:denom} but are \emph{not} divided by patient-days.
+KEC appears as a descriptive comparator: relatively low hospital geographic density with low sampled inpatient counts---not a formal negative control.
 
 \begin{table}[H]
 \centering
-\caption{Sequenced hospital-associated infections standardised by HA throughput (FY2021--22).}
+\caption{Sequenced persons in parent-confirmed wards by HA cluster.
+Rates use \emph{inpatient} numerators only.
+KCC and HKWC are not represented in the genomic sample (NA), not zero burden.}
 \label{tab:denom}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrrrr}
+\begin{tabular}{lrrrrrrr}
 \toprule
-Cluster & Cases & Beds & Discharges & Patient-days & /1k beds & /100k discharges \\
+Cluster & All & Inpatients & Staff/OP & Beds & /1k beds (IP) & /100k disc.\ (IP) & Representation \\
 \midrule
-NTWC & 78 & 4{,}762 & 140{,}388 & 1{,}331{,}433 & 16.38 & 55.56 \\
-NTEC & 56 & 5{,}144 & 163{,}397 & 1{,}311{,}078 & 10.89 & 34.27 \\
-KWC  & 15 & 4{,}953 & 201{,}096 & 1{,}416{,}390 & 3.03 & 7.46 \\
-HKEC & 8 & 3{,}307 & 102{,}190 & 822{,}971 & 2.42 & 7.83 \\
-KEC  & 5 & 2{,}922 & 114{,}909 & 809{,}758 & 1.71 & 4.35 \\
-KCC  & 0 & 6{,}005 & 199{,}221 & 1{,}599{,}173 & 0 & 0 \\
-HKWC & 0 & 3{,}076 & 103{,}370 & 635{,}637 & 0 & 0 \\
+NTWC & 64 & 44 & 20 & 4{,}762 & 9.24 & 31.34 & Represented \\
+NTEC & 39 & 24 & 15 & 5{,}144 & 4.67 & 14.69 & Represented \\
+KWC  & 12 & 8 & 4 & 4{,}953 & 1.62 & 3.98 & Represented \\
+HKEC & 6 & 6 & 0 & 3{,}307 & 1.81 & 5.87 & Represented \\
+KEC  & 5 & 5 & 0 & 2{,}922 & 1.71 & 4.35 & Represented \\
+KCC  & --- & --- & --- & 6{,}005 & NA & NA & Not in genomic sample \\
+HKWC & --- & --- & --- & 3{,}076 & NA & NA & Not in genomic sample \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.98\textwidth]{figures/fig_denominator_standardization.pdf}
-\caption{Sequenced hospital-associated infection rates under three denominators. New Territories clusters remain elevated after bed, discharge, and patient-day standardisation.}
-\label{fig:denom}
+\includegraphics[width=0.98\textwidth]{figures/fig_inpatient_throughput_scaling.pdf}
+\caption{Sequenced confirmed-ward inpatients after crude patient-throughput scaling.
+Unrepresented clusters are omitted (not coded as zero).}
+\label{fig:rates}
 \end{figure}
+
+\subsection{Discordance with coarse density measures}
+Mean catchment population density and hospitals per 100~km$^2$ were lower for NT than for urban represented clusters, while sampled inpatient rates were higher (Figure~\ref{fig:density}).
+We describe this as discordance between \emph{sampled case concentration} and coarse catchment-density measures---not as a proven density paradox of nosocomial incidence.
+Catchments are administrative; specialty hospitals may draw beyond district borders; staff exposure relates to where staff live and travel; and land-area definitions (including Islands/Lantau handling) can inflate urban density~\cite{legco2017,census2021}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.72\textwidth]{figures/fig_psych_share_vs_hai.pdf}
-\caption{Mentally-ill patient-day share versus sequenced hospital-associated infection rate. NTWC combines high psychiatric throughput share with the highest bed-standardised rate.}
-\label{fig:psych}
+\includegraphics[width=0.72\textwidth]{figures/fig_density_discordance.pdf}
+\caption{Discordance between sampled confirmed-ward inpatient concentration and coarse catchment population density (represented clusters only).}
+\label{fig:density}
 \end{figure}
 
-\subsection{Ascertainment is uneven---and must be stated plainly}
-Parent-study confirmed clusters covered 51.9\% of official nosocomial cases overall~\cite{shen2026hai}.
-Public HA bulletins during the window mentioned hospitals in \emph{all seven} HA clusters, including Kowloon Central and Hong Kong West---yet those two clusters contribute zero cases to the sequenced plot table (Figure~\ref{fig:asc}).
-Conversely, NTWC (especially Castle Peak Hospital) and NTEC appear in both official bulletins and the sequenced table.
-Daily bulletin tables are incremental and cannot replace Table~S3 cumulative counts; we therefore claim a \textbf{presence contrast}, not cluster-specific coverage percentages.
+\subsection{Geographic genomic representation is incomplete}
+Public HA bulletins during the window mentioned hospitals across all seven HA clusters, including Kowloon Central and Hong Kong West, which contribute zero confirmed-ward genomes to the plot table (Figure~\ref{fig:asc}).
+That is missing genomic representation, not evidence of zero nosocomial burden.
+Parent-study confirmed clusters covered 51.9\% of official nosocomial cases overall~\cite{gu2026hai}; cluster-specific sampling fractions remain unknown.
+Therefore an observed several-fold NT/urban ratio in the genomic table could, in principle, be generated partly or wholly by differential selection into sequencing.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.75\textwidth]{figures/fig_ascertainment_mentions_vs_sequences.pdf}
-\caption{Official nosocomial bulletin mention-days versus sequenced hospital-associated cases. KCC lies on the $x$-axis (mentioned, not sequenced in the plot table), illustrating uneven genomic coverage.}
+\includegraphics[width=0.75\textwidth]{figures/fig_ascertainment_presence.pdf}
+\caption{Official nosocomial bulletin mention-days versus sequenced confirmed-ward persons.
+Clusters on the $x$-axis with zero sequenced persons illustrate incomplete genomic representation.}
 \label{fig:asc}
 \end{figure}
 
 \section{Discussion}
 
-\subsection{What the dual-seeding result changes}
-If wards were seeded almost only by visitors, policy could focus narrowly on visitation rules.
-Our temporal taxonomy shows staff/outpatient-first and inpatient-first routes both carry large case burdens, and the mix is shared across NT and urban clusters.
-That result sits comfortably with international evidence that HCW--patient networks and multi-route transmission are the rule rather than the exception~\cite{lindsey2022natcomms,ellingford2021elife,benoit2023ash}, and with the parent paper's caution that healthcare workers with routine community exposure are plausible bridges~\cite{shen2026hai}.
-It also preserves a role for incubating admissions despite mandatory admission screening.
-Phylogenetic staff-index events were rarer (2/18 confirmed clusters)~\cite{shen2026hai}; temporal first detection is more sensitive and should be reported as a complementary definition---especially because genomic studies often show that single epidemiological ``outbreaks'' hide multiple introductions~\cite{haanappel2023aric,benoit2023ash}.
+\subsection{First-detection order is not dual seeding}
+Observing both staff/outpatient-before-inpatient and inpatient-before-staff/outpatient detection patterns is consistent with---but much weaker than---international evidence of multi-route hospital transmission~\cite{lindsey2022natcomms,ellingford2021elife,abbas2021aric}.
+Earliest positive date is not earliest infection, introduction source, or transmission direction.
+Testing intensity, symptom onset, incubating admissions, unobserved visitors, and outbreak-triggered mass testing can all scramble detection order.
+The parent phylogenetic staff-index result (2/18) remains the stronger directional claim within this dataset~\cite{gu2026hai}; our taxonomy is complementary and deliberately descriptive.
 
-\subsection{Why the density paradox matters}
-The NT excess is the opposite of a density-driven urban story.
-Lower population and hospital geographic density, yet higher standardised sequenced burden, redirects attention to hospital case-mix (long-stay and psychiatric capacity), IPC implementation, and sampling---not skyline density.
-Literature on facility outbreaks already warns that geography matters in inconsistent directions: capital-region concentration in some systems~\cite{espenhain2023eurgeriatr}, elevated odds outside the densest core in others~\cite{doggui2025scirep}.
-KEC's low density with low burden prevents the lazy inference that ``sparse geography causes outbreaks.''
-Instead, NTWC's high mentally-ill patient-day share and the BA.5.6 single-ward deep outbreak echo the well-documented vulnerability of psychiatric and long-stay settings~\cite{chun2020frontiers,rovers2020aric,kim2023medicina}.
+\subsection{Sample concentration is not incidence excess}
+Inpatient-compatible throughput scaling leaves a several-fold NT concentration in the genomic sample.
+That finding survives crude leave-one-out checks but shrinks when the BA.5.6 ward is excluded, and it does not adjust for $P(\text{detected})\times P(\text{sampled})\times P(\text{sequenced})\times P(\text{included})$.
+Without cluster-specific official counts and sequencing denominators, we cannot reject the hypothesis that differential ascertainment explains much of the apparent ratio.
+Psychiatric/long-stay case-mix remains a \emph{candidate} explanation motivated by external literature~\cite{chun2020frontiers,rovers2020aric,kim2023medicina} and by NTWC's high mentally-ill patient-day share, but ecological association at cluster scale---especially with one deep ward outbreak---does not demonstrate causation.
 
-\subsection{Denominators versus ascertainment}
-Admissions and patient-day standardisation were the cleanest quantitative tests available without hospital-level window admissions.
-They fail to wash out NT concentration.
-Sequencing-effort tip counts from the study trees are largely circular with the sample itself and were not used as independent proof.
-The bulletin presence contrast shows under-representation of some urban clusters (notably KCC) in the sequenced table: NT excess is unlikely to be \emph{only} artefact, but it is also not fully separable from ascertainment without Table~S3 hospital totals.
-This limitation is itself a finding about surveillance design: genomic programmes that follow the loudest clusters can reify geographic narratives unless coverage is audited against independent official registries~\cite{shen2026hai,benoit2023ash}.
+\subsection{Surveillance implication}
+The geographic distribution of a genomic hospital-outbreak dataset is a joint product of transmission, case mix, outbreak detection, and sequencing selection---not simply underlying disease incidence.
+That principle is the note's main interpretive contribution.
+Making it a formal methodological contribution would require selection models, sampling fractions, and preferably validation in another period or system.
 
 \subsection{Limitations}
 \begin{enumerate}[leftmargin=1.4em,itemsep=0.15em]
-  \item Sequenced hospital-associated cases $\neq$ complete nosocomial incidence.
-  \item Annual throughput approximates an 83-day window.
-  \item Temporal dual-seeding $\neq$ phylogenetic index.
-  \item Official bulletin mining is incomplete relative to curated Table~S3.
-  \item Catchment populations are planning estimates, not closed cohorts.
+  \item Sequenced confirmed-ward cases $\neq$ complete nosocomial incidence.
+  \item Annual patient throughput approximates an 83-day window; staff denominators are missing.
+  \item First-detection order $\neq$ phylogenetic index or true seeding.
+  \item Bulletin mention-days are a presence proxy, not coverage fractions.
+  \item Catchment density measures are coarse and partly inconsistent across sources.
+  \item Regional pathway comparison is severely underpowered.
+  \item This secondary analysis overlaps the Gu et al.\ dataset; novelty is limited to the analyses in Table~\ref{tab:contrib}.
 \end{enumerate}
 
-\subsection{Implications}
-During high community prevalence, protecting hospitals requires more than citywide mobility management (already null in the parent GAM)~\cite{shen2026hai}.
-Practical levers include: (i)~dual attention to staff/community bridges \emph{and} admission pathways~\cite{lindsey2022natcomms,ellingford2021elife}; (ii)~heightened, psychiatry-adapted IPC in long-stay settings~\cite{rovers2020aric,kim2023medicina}; (iii)~genomic surveillance designed for even cluster coverage, not only the loudest outbreaks.
-
 \section{Conclusion}
-Hospital-associated SARS-CoV-2 in Hong Kong's post-relaxation window was \textbf{dually seeded} and \textbf{geographically structured}.
-New Territories concentration persists after throughput standardisation and sits inside a density paradox that urban intuition does not explain.
-Ascertainment is uneven; recovering hospital-level official totals remains the highest-value upgrade.
-Until then, the evidence supports ward- and case-mix-targeted prevention over density- or mobility-centric narratives alone.
+Among sequenced persons linked to parent-confirmed hospital clusters, both staff/outpatient-first and inpatient-first detection patterns were observed.
+Sampled cases were concentrated in New Territories clusters after crude patient-throughput scaling, but geographically incomplete and potentially differential genomic ascertainment prevents inference about underlying nosocomial incidence.
+Complete hospital-level outbreak, throughput, staffing, and sequencing denominators are required to test whether long-stay or psychiatric case mix---or selection alone---explains the observed concentration.
+
+\section{Further work (with current data limits)}
+With only this repository and public HA/Census sources, the highest-value next steps are documentation and denominator hygiene---not a selection-adjusted incidence model.
+
+\paragraph{Feasible without new restricted data.}
+\begin{itemize}[leftmargin=1.4em,itemsep=0.15em]
+  \item Update cluster throughput to HA Statistical Report / data.gov.hk extracts for FY2022--23 (closer to the study window than FY2021--22).
+  \item Where open hospital-level beds/discharges/patient-days exist, repeat inpatient scaling at hospital letter level \emph{without} publishing a name crosswalk.
+  \item Expand density sensitivity using alternative land definitions (total vs core districts) while keeping the claim as sample discordance, not incidence paradox.
+  \item Keep psychiatric/long-stay share as a candidate explanation with leave-one-out already reported; avoid causal language.
+\end{itemize}
+
+\paragraph{Not recoverable from GitHub/Kaggle.}
+Official cumulative nosocomial counts by hospital (Table~S3), specimens submitted versus sequenced, staff FTE-days, visitor volumes, and ward-level occupancy are not in public ML repositories.
+Community GISAID sets and other HK genomic repos do not supply HA outbreak registries or sampling fractions for this window.
+
+\paragraph{Only via HA / parent-team data access.}
+An HA research-data application (or collaboration with Gu et al.) would be required for cluster- or hospital-specific official nosocomial totals and sequencing inclusion denominators.
+That path enables inverse-probability or quantitative bias analysis; it is not assumed for this Laidlaw secondary note.
+
+\paragraph{Recommended positioning.}
+Treat the present manuscript as a focused secondary research note on \emph{ascertainment-aware geographic reanalysis of a published genomic sample}, with mixed first-detection patterns as a descriptive companion result.
 
 \section*{Data and code}
-Analysis scripts and tabulated outputs are in the project repository
-(\texttt{scripts/4.dual\_seeding\_geography.py},
-\texttt{scripts/5.denominators\_ascertainment.py}, and \texttt{analysis/}).
-Parent genomic methods and primary figures are described in Shen et al.~\cite{shen2026hai}.
+Analysis scripts: \texttt{scripts/6.stage1\_peer\_review\_revision.py} (primary Stage-1 outputs), with earlier exploratory scripts retained for provenance.
+Tabulated outputs: \texttt{analysis/outputs/stage1\_*}.
+Parent genomic methods: Gu et al.~\cite{gu2026hai}.
 
 \section*{Competing interests}
-None declared for this companion reanalysis draft.
+None declared.
 
 \section*{Acknowledgements}
 Prepared under the Laidlaw Scholars Programme, The University of Hong Kong.
-This draft builds on the open methods and anonymised plot outputs of the parent genomic epidemiology study~\cite{shen2026hai}.
+This secondary note builds on the open methods and anonymised plot outputs of Gu et al.~\cite{gu2026hai}.
 HA Statistical Report extracts and Census/LegCo catchment figures are public.
+Decision logs are kept outside the manuscript body (\texttt{analysis/outputs/DECISION\_LOG\_stage1.md}).
 
 \begin{thebibliography}{99}
 
-\bibitem{shen2026hai}
-Shen R., Wu J.T., Gu H., et al.\ (2026).
-Genomic epidemiology of hospital-related severe acute respiratory syndrome coronavirus~2 infection outbreaks in Hong Kong during the fifth wave of the coronavirus disease 2019 pandemic.
+\bibitem{gu2026hai}
+Gu H., Li M., Wang R., et al.\ (2026).
+Genomic epidemiology of hospital-associated SARS-CoV-2 clusters in Hong Kong during a period of relaxed visitation (May--August 2022).
 \textit{Influenza and Other Respiratory Viruses}, 20, e70249.
 \doi{10.1111/irv.70249}
 
@@ -328,6 +373,12 @@ Haanappel C.P., Oude Munnink B.B., Sikkema R.S., et al.\ (2023).
 Combining epidemiological data and whole genome sequencing to understand SARS-CoV-2 transmission dynamics in a large tertiary care hospital during the first COVID-19 wave in The Netherlands focusing on healthcare workers.
 \textit{Antimicrobial Resistance \& Infection Control}, 12, 46.
 \doi{10.1186/s13756-023-01247-7}
+
+\bibitem{abbas2021aric}
+Abbas M., Robalo Nunes T., Martischang R., et al.\ (2021).
+Nosocomial transmission and outbreaks of coronavirus disease 2019: the need to protect both patients and healthcare workers.
+\textit{Antimicrobial Resistance \& Infection Control}, 10, 7.
+\doi{10.1186/s13756-020-00875-7}
 
 \bibitem{wong2022hcw}
 Wong S.C., Chan V.W., Yuen L.L., et al.\ (2023).
@@ -386,13 +437,5 @@ LegCo Question~13: Resource allocation of Hospital Authority (cluster catchment 
 \url{https://www.info.gov.hk/gia/general/201712/13/P2017121300666.htm}
 
 \end{thebibliography}
-
-\appendix
-\section{Decision log (for transparency)}
-\begin{enumerate}[leftmargin=1.4em,itemsep=0.2em]
-  \item \textbf{Laidlaw caliber:} Yes---original questions, reproducible methods, graded evidence, explicit limits; drafted to exceed a 2{,}000--3{,}000-word essay toward a companion article.
-  \item \textbf{Table~S3:} Not reconstructible from incremental public bulletins; presence contrast used instead; author Excel remains the upgrade path.
-  \item \textbf{Causal language:} Density and mobility are treated as context/nulls, not causes.
-\end{enumerate}
 
 \end{document}

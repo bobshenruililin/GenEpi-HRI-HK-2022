@@ -1,0 +1,155 @@
+{
+  "case_totals": {
+    "primary_confirmed_n": 126,
+    "primary_wards": 18,
+    "sensitivity_all_n": 162,
+    "sensitivity_wards": 29,
+    "primary_inpatient": 87,
+    "primary_staff_outpatient": 39,
+    "primary_api_ge3": 72,
+    "nt_share_primary_all": 0.8174603174603174,
+    "nt_share_primary_inpatient": 0.7816091954022989
+  },
+  "fisher_primary_confirmed": {
+    "a_nt_staff_before": 3,
+    "b_nt_inp_before": 4,
+    "c_urban_staff_before": 1,
+    "d_urban_inp_before": 1,
+    "odds_ratio": 0.75,
+    "p_exact": 1.0,
+    "or_ci95_low": 0.03213076421508367,
+    "or_ci95_high": 17.506586405309854,
+    "n_wards": 9,
+    "interpretation": "Severely imprecise; failure to detect a difference is not evidence of equivalence or a shared regional mechanism."
+  },
+  "fisher_all_investigated": {
+    "a_nt_staff_before": 4,
+    "b_nt_inp_before": 6,
+    "c_urban_staff_before": 2,
+    "d_urban_inp_before": 1,
+    "odds_ratio": 0.3333333333333333,
+    "p_exact": 0.5594405594405594,
+    "or_ci95_low": 0.022101508448017164,
+    "or_ci95_high": 5.027308944656192,
+    "n_wards": 13,
+    "interpretation": "Severely imprecise; failure to detect a difference is not evidence of equivalence or a shared regional mechanism."
+  },
+  "nt_urban_ratios_primary_inpatient": [
+    {
+      "numerator": "sequenced_inpatient",
+      "rate": "inpatient_per_1000_beds",
+      "pooled_nt": 6.86452654956592,
+      "pooled_urban": 1.6991593632623858,
+      "pooled_ratio_nt_urban": 4.039954519855059,
+      "mean_rate_nt": 6.9527225318635155,
+      "mean_rate_urban": 1.7135575640131762,
+      "mean_ratio_nt_urban": 4.057478241688094,
+      "caveat": "Ratios describe concentration within the selected genomic sample after crude patient-throughput scaling; they are not selection-adjusted incidence ratios and may be explained by differential ascertainment."
+    },
+    {
+      "numerator": "sequenced_inpatient",
+      "rate": "inpatient_per_100k_discharges",
+      "pooled_nt": 22.384252020343332,
+      "pooled_urban": 4.54333504704743,
+      "pooled_ratio_nt_urban": 4.926832775603937,
+      "mean_rate_nt": 23.014931143465176,
+      "mean_rate_urban": 4.733628240662941,
+      "mean_ratio_nt_urban": 4.8620064722788525,
+      "caveat": "Ratios describe concentration within the selected genomic sample after crude patient-throughput scaling; they are not selection-adjusted incidence ratios and may be explained by differential ascertainment."
+    },
+    {
+      "numerator": "sequenced_inpatient",
+      "rate": "inpatient_per_100k_patient_days",
+      "pooled_nt": 2.5733100070349755,
+      "pooled_urban": 0.6231308125396221,
+      "pooled_ratio_nt_urban": 4.12964654491604,
+      "mean_rate_nt": 2.567632370910382,
+      "mean_rate_urban": 0.6371168012408278,
+      "mean_ratio_nt_urban": 4.030081087031052,
+      "caveat": "Ratios describe concentration within the selected genomic sample after crude patient-throughput scaling; they are not selection-adjusted incidence ratios and may be explained by differential ascertainment."
+    }
+  ],
+  "nt_urban_ratio_excluding_ba56_ward": {
+    "numerator": "sequenced_inpatient",
+    "rate": "inpatient_per_1000_beds",
+    "pooled_nt": 4.744599232788209,
+    "pooled_urban": 1.6991593632623858,
+    "pooled_ratio_nt_urban": 2.7923215063704085,
+    "mean_rate_nt": 4.747766630981533,
+    "mean_rate_urban": 1.7135575640131762,
+    "mean_ratio_nt_urban": 2.7707074046944746,
+    "caveat": "Ratios describe concentration within the selected genomic sample after crude patient-throughput scaling; they are not selection-adjusted incidence ratios and may be explained by differential ascertainment."
+  },
+  "density_discordance": {
+    "mean_pop_density_nt_over_urban": 0.27397995143929643,
+    "mean_hosp_per_100km2_nt_over_urban": 0.19878965303745194,
+    "note": "Coarse catchment density measures; administrative catchments are not closed cohorts; Islands/Lantau handling may inflate urban density. Discordance is descriptive of the sample, not a proven paradox of incidence."
+  },
+  "loo_hospital_ratio_range": {
+    "min": 2.5546771228495224,
+    "max": 5.482795419803294,
+    "median": 3.921132328094616
+  },
+  "loo_ward_ratio_range": {
+    "min": 2.7923215063704085,
+    "max": 5.482795419803294,
+    "median": 3.8914267801545055
+  },
+  "contribution_matrix": [
+    {
+      "item": "162 genomes / 29 suspected / 18 confirmed / 126 confirmed genomes",
+      "source": "Gu et al. 2026",
+      "this_note": "Reproduced as cohort definition"
+    },
+    {
+      "item": "51.9% coverage of official nosocomial cases",
+      "source": "Gu et al. 2026",
+      "this_note": "Cited; not re-estimated"
+    },
+    {
+      "item": "2/18 phylogenetically supported staff-before-inpatient clusters",
+      "source": "Gu et al. 2026",
+      "this_note": "Cited; temporal taxonomy is complementary, not equivalent"
+    },
+    {
+      "item": "Mobility GAM null after time smooth",
+      "source": "Gu et al. 2026",
+      "this_note": "Cited as background"
+    },
+    {
+      "item": "API / BA.5.6 single-ward deep outbreak description",
+      "source": "Gu et al. 2026 (genomic)",
+      "this_note": "Sensitivity exclusion of BA.5.6 ward only"
+    },
+    {
+      "item": "Ward-level first-detection order taxonomy (all confirmed wards)",
+      "source": "\u2014",
+      "this_note": "New descriptive analysis"
+    },
+    {
+      "item": "HA-cluster sample concentration with inpatient-only throughput scaling",
+      "source": "\u2014",
+      "this_note": "New; rates are sample concentration, not incidence"
+    },
+    {
+      "item": "Official bulletin presence vs genomic representation audit",
+      "source": "\u2014",
+      "this_note": "New ascertainment-aware geographic audit"
+    },
+    {
+      "item": "Leave-one-out / BA.5.6 exclusion / tie-window sensitivity",
+      "source": "\u2014",
+      "this_note": "New robustness checks"
+    }
+  ],
+  "claims_forbidden": [
+    "dual seeding as identified mechanism",
+    "true NT nosocomial incidence excess",
+    "density paradox as causal finding",
+    "geographic equivalence of routes",
+    "causal role of psychiatric case mix",
+    "effect of visitation relaxation",
+    "KEC as negative control",
+    "KCC/HKWC as zero HAI burden"
+  ]
+}
