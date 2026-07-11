@@ -1,0 +1,8 @@
+ha_cluster,n_hospitals_institutions,n_sopc,n_gopc,beds_total,beds_mentally_ill,beds_mentally_handicapped,catchment_population_2017,districts_core,land_area_km2_core,region_group,in_hai_sample_expected,notes
+HKEC,7,7,12,3307,400,,762900,"Eastern; Wan Chai",28.77,Urban,yes,Islands excl. Lantau omitted from land_area_core. Beds as at 31 Mar 2022 (HA Stat Report 2021-22). Catchment: LegCo LCQ13 2017 projection.
+HKWC,7,8,6,3076,,,521200,"Central and Western; Southern",51.95,Urban,no,Not represented in sequenced HAI plot table.
+KCC,9,10,13,6005,,,1159700,"Kowloon City; Wong Tai Sin; Yau Tsim Mong",26.31,Urban,no,Not represented in sequenced HAI plot table.
+KEC,3,4,8,2922,,,1138100,"Kwun Tong; Sai Kung",147.62,Urban,yes,Sai Kung land area dilutes geographic density.
+KWC,5,8,16,4953,920,,1350400,"Sham Shui Po; Kwai Tsing; Tsuen Wan",95.32,Urban,yes,Lantau/NLTH omitted from land_area_core; catchment includes Lantau.
+NTEC,7,7,10,5144,552,,1328000,"Sha Tin; Tai Po; North",353.97,New Territories,yes,Core NT East catchment.
+NTWC,5,5,8,4762,1176,520,1150300,"Tuen Mun; Yuen Long",226.10,New Territories,yes,Highest psychiatric + MH bed share among clusters.

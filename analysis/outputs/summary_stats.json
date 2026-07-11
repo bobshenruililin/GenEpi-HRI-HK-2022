@@ -1,0 +1,92 @@
+{
+  "n_cases": 162,
+  "n_hospitals": 17,
+  "n_wards": 29,
+  "nt_case_share": 0.8271604938271605,
+  "fisher_dual_seeding": {
+    "odds_ratio": 0.3333333333333333,
+    "p_value": 0.5594405594405594,
+    "n_wards": 13,
+    "table": {
+      "staff_first": {
+        "New Territories": 4,
+        "Urban (HK Island/Kowloon)": 2
+      },
+      "inpatient_first": {
+        "New Territories": 6,
+        "Urban (HK Island/Kowloon)": 1
+      }
+    }
+  },
+  "pathway_cases": {
+    "inpatient_first": 54,
+    "inpatient_only": 21,
+    "same_day": 24,
+    "staff_first": 48,
+    "staff_only": 15
+  },
+  "cluster_rates": {
+    "HKEC": {
+      "sequenced_cases": 8,
+      "pop_density": 26517.205,
+      "hospitals_per_100km2": 24.331,
+      "beds_per_100km2": 11494.612,
+      "cases_per_1000_beds": 2.419,
+      "cases_per_million_pop": 10.486
+    },
+    "HKWC": {
+      "sequenced_cases": 0,
+      "pop_density": 10032.724,
+      "hospitals_per_100km2": 13.474,
+      "beds_per_100km2": 5921.078,
+      "cases_per_1000_beds": 0.0,
+      "cases_per_million_pop": 0.0
+    },
+    "KCC": {
+      "sequenced_cases": 0,
+      "pop_density": 44078.297,
+      "hospitals_per_100km2": 34.208,
+      "beds_per_100km2": 22824.021,
+      "cases_per_1000_beds": 0.0,
+      "cases_per_million_pop": 0.0
+    },
+    "KEC": {
+      "sequenced_cases": 5,
+      "pop_density": 7709.66,
+      "hospitals_per_100km2": 2.032,
+      "beds_per_100km2": 1979.407,
+      "cases_per_1000_beds": 1.711,
+      "cases_per_million_pop": 4.393
+    },
+    "KWC": {
+      "sequenced_cases": 15,
+      "pop_density": 14167.016,
+      "hospitals_per_100km2": 5.245,
+      "beds_per_100km2": 5196.181,
+      "cases_per_1000_beds": 3.028,
+      "cases_per_million_pop": 11.108
+    },
+    "NTEC": {
+      "sequenced_cases": 56,
+      "pop_density": 3751.73,
+      "hospitals_per_100km2": 1.978,
+      "beds_per_100km2": 1453.23,
+      "cases_per_1000_beds": 10.886,
+      "cases_per_million_pop": 42.169
+    },
+    "NTWC": {
+      "sequenced_cases": 78,
+      "pop_density": 5087.572,
+      "hospitals_per_100km2": 2.211,
+      "beds_per_100km2": 2106.148,
+      "cases_per_1000_beds": 16.38,
+      "cases_per_million_pop": 67.808
+    }
+  },
+  "limits": [
+    "Sequenced HAI != complete incidence",
+    "No hospital-level sequencing effort denominator",
+    "Catchment populations are planning estimates, not closed cohorts",
+    "Core land areas exclude ambiguous Islands/Lantau splits"
+  ]
+}
